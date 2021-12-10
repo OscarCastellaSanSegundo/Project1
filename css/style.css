@@ -353,7 +353,7 @@ SECCIÓN CONTENIDO: FORMATO DEL CONTENIDO
 SECCIÓN BANNER-JUEGOS: FORMATO DEL CONTENIDO
 -------------------------------------------------------*/
 
-.grid-juegos {
+.grid-frase {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: minmax(20px, auto);
@@ -363,7 +363,7 @@ SECCIÓN BANNER-JUEGOS: FORMATO DEL CONTENIDO
         rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-.grid-juegos .content h2 {
+.grid-frase .content h2 {
     font-size: 3em;
     font-weight: 900;
     text-transform: uppercase;
@@ -373,7 +373,7 @@ SECCIÓN BANNER-JUEGOS: FORMATO DEL CONTENIDO
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-.grid-juegos .content p {
+.grid-frase .content p {
     padding: auto;
     justify-content: center;
     text-shadow: 0 1px 0 rgb(20, 9, 9), 0 6px 1px rgba(255, 251, 251, 0.1), 0 0 5px rgba(255, 255, 255, 0.1),
@@ -381,7 +381,7 @@ SECCIÓN BANNER-JUEGOS: FORMATO DEL CONTENIDO
         0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
 }
 
-.grid-juegos .content a {
+.grid-frase .content a {
     background: #1680ac;
     padding: 15px 35px;
     color: white;
@@ -392,7 +392,7 @@ SECCIÓN BANNER-JUEGOS: FORMATO DEL CONTENIDO
     margin-top: 20px;
 }
 
-.grid-juegos .content a:hover {
+.grid-frase .content a:hover {
     background: #0b3b50;
 }
 
@@ -456,36 +456,39 @@ SECCIÓN BANNER-GRADOS: FORMATO DEL CONTENIDO
 /*------------------------------------------------------
 LOGOS GENERALITAT
 -------------------------------------------------------*/
-.contenedor-grid{
+.contenedor-grid {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(255, 255, 255);
+    box-shadow: rgba(93, 90, 50, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-.img-logo{
+.img-logo {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px;
-  
+
 }
 
-
 .grid-logos {
-   width: 80%;
-  
+    width: 80%;
+
     border: #1572db;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  }
+}
 
 /*------------------------------------------------------
 FOOTER
 -------------------------------------------------------*/
 .footer {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    grid-template-rows: 10rem;
     color: white;
     background-color: #212529;
     padding: 40px;
@@ -495,6 +498,39 @@ FOOTER
     text-align: center;
     color: rgb(255, 255, 255);
     margin-top: 50px;
+}
+
+.footer .content-redes {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-bottom: 50px;
+}
+
+.footer .separatorVertical {
+    margin-top: 35px;
+    border-left: 4px solid rgb(255, 255, 255);
+    height: 300px;
+}
+
+.footer .content-redes i {
+    color: white;
+}
+
+.footer-admin {
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.footer .footer-btn {
+    text-decoration: none;
+    width: 120px;
+    margin-top: 30px;
+    color: #000000;
+    background-color: white;
+    border-radius: 5%;
+    padding: 10px;
+    align-items: center;
 }
 
 /*------------------------------------------------------
@@ -683,4 +719,5 @@ MEDIA QUERYS para DISEÑO RESPONSIVE
             0 3px 5px rgba(255, 255, 255, 0.2), 0 5px 10px rgba(255, 255, 255, 0.25),
             0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
     }
+
 }
