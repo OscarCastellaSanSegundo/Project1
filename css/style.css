@@ -486,9 +486,9 @@ FOOTER
 -------------------------------------------------------*/
 .footer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
     gap: 1rem;
-    grid-template-rows: 10rem;
+    grid-template-rows:  8rem 8rem;
     color: white;
     background-color: #212529;
     padding: 40px;
@@ -507,8 +507,8 @@ FOOTER
 }
 
 .footer .separatorVertical {
-    margin-top: 35px;
-    border-left: 4px solid rgb(255, 255, 255);
+
+    border-bottom: 4px solid rgb(255, 255, 255);
     height: 300px;
 }
 
@@ -524,13 +524,18 @@ FOOTER
 
 .footer .footer-btn {
     text-decoration: none;
-    width: 120px;
+    width: 80px;
     margin-top: 30px;
     color: #000000;
     background-color: white;
     border-radius: 5%;
     padding: 10px;
     align-items: center;
+}
+
+.footer .footer-btn:hover{
+    background-color: #000000;
+    color: white;
 }
 
 /*------------------------------------------------------
