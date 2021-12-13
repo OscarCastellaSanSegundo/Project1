@@ -36,34 +36,44 @@
     }
     
     function logInUser($email, $password){
+        $i = 0;
         $conexion = abrirBd();
-
-        $sentenciaTexto = "select Email, Password from usuario where Email = :email";
+        $sentenciaTexto = "select Email, Password, Id from usuario";
         $sentencia = $conexion->prepare($sentenciaTexto);
-
-        $sentencia->bindParam(':email', $email);
-
         
-
         $sentencia->execute();
+        $resultado = $sentencia->fetchAll();      
+        $longitudArray = (count($resultado));
 
-        $resultado = $sentencia->fetchAll();
-
-        foreach ($resultado as $resultados) {
-            echo $resultados['Email'];
-        }
-        
-        echo $resultado;
-
-        // if ($email == $sentencia) {
+        while ($i <= $longitudArray) {
+            if ($resultado[$i]['Email'] == $email && $resultado[$i]['Password'] == $password) {
+                $sesionIniciada = true;
+                $_COOKIE['sessionActual'] = $resultado[$i]['Id'];
+                $i = $longitudArray + 1;
+            } else {
+                $sesionIniciada = false;
+                $i++;
+            }
             
+        }
+        // foreach ($resultado as $resultados) {
+        //      $resultados['Email'];
+        //      $resultados['Id'];
+        //      $resultados['Password'];
+
+        //      if ($email == $resultados['Email'] && $password == $resultados['Password']) {
+        //         $sesionIniciada = true;
+        //         $_SESSION['sessionActual'] = $resultados['Id'];
+        //     } else {
+        //         $sesionIniciada = false;
+        //     }
         // }
 
         $conexion = cerrarBd();
+
+        return $sesionIniciada;
     }
 
-    function posicion(){
-        $_SESSION['posicion']++;
-        echo $_SESSION['posicion'];
-    }
+    
+
 ?>

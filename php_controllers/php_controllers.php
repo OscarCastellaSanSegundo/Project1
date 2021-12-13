@@ -1,17 +1,32 @@
-<?php
-    
-    require_once('../php_librarys/bd.php');
-    if (isset($_POST['insertarRegistro'])) {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <?php
+            
+            require_once('../php_librarys/bd.php');
+            if (isset($_POST['insertarRegistro'])) {
 
-        insertarUsuario($_POST['emailUsuario'], $_POST['nombreUsuario'], $_POST['apellidosUsuario'], $_POST['contraUsuario']);   
+                insertarUsuario($_POST['emailUsuario'], $_POST['nombreUsuario'], $_POST['apellidosUsuario'], $_POST['contraUsuario']);   
 
-    }
+            }
 
-    if (isset($_GET['loguearUsuario'])) {
+            if (isset($_GET['loguearUsuario'])) {
 
-        logInUser($_GET['inputEmail'], $_GET['inputPassword']);
-        
+                $sesionCorrecta = logInUser($_GET['inputEmail'], $_GET['inputPassword']);
+                
+                if ($sesionCorrecta == true) {
+                    header("Location: ../paginasHtml/juegos.php");
+                }else{
+                    header("Location: ../paginasHtml/login.php");
+                }
+            }
 
-    }
-
-?>
+        ?>
+    </body>
+</html>

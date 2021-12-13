@@ -4,6 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+    {
+        "name": "Juego4",
+        "request": "launch",
+        "type": "pwa-chrome",
+        "url": "http://localhost:80/LANDING_PROYECTO_1/Project1/JUEGO4/inicio.php",
+        "webRoot": "${workspaceFolder}"
+    },
         {
             "name": "Listen for Xdebug 2 (Legacy)",
             "type": "php",
