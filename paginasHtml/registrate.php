@@ -48,7 +48,7 @@
                         </div>
                         <div class="col-9">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="emailUsuario" id="emailUsuario"  maxlength="50" placeholder="correo@hotm..." aria-label="Amount (to the nearest dollar)" required>          
+                                <input type="email" class="form-control" name="emailUsuario" id="emailUsuario"  maxlength="50" placeholder="correo@hotm..." aria-label="Amount (to the nearest dollar)" required>          
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
 
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <a class="btn btn-dark miBtn" href="login.php" role="button">Volver</a>
-                        <button type="submit" class="btn btn-primary" name="insert">Registrarse</button> 
+                        <button type="submit" class="btn btn-primary" name="insertarRegistro">Registrarse</button> 
                     </div>
                 </form>
             </div>

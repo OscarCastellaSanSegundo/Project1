@@ -18,21 +18,21 @@
            <div class="titulo-form">
                <h3>Iniciar Sesion</h3>
            </div>
-           <form>
+           <form action="../php_controllers/php_controllers.php" method="GET">
             <div class="mb-3 m-4">
-              <label for="exampleInputEmail1" class="form-label">Email </label>
-              <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp">
+              <label for="inputEmail" class="form-label">Email </label>
+              <input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp">
               <div id="emailHelp" class="form-text">Nunca usaremos tu mail para terceros.</div>
             </div>
             <div class="mb-3 m-4">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="InputPassword">
+              <label for="inputPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="inputPassword" name="inputPassword">
             </div>
            
             <div class="boton-login">
                
                 <a href="../index.php"><input type="button" class="btn btn-dark miBtn" value="Cancelar"></input></a>
-                <button type="submit" class="btn btn-primary miBtn">Login</button>
+                <button type="submit" class="btn btn-primary miBtn" name="loguearUsuario">Login</button>
             </div>
             <div class="registrate">
                 <a href="registrate.php">Registrate</a>

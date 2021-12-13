@@ -34,6 +34,33 @@
 
         $conexion = cerrarBd();
     }
+    
+    function logInUser($email, $password){
+        $conexion = abrirBd();
+
+        $sentenciaTexto = "select Email, Password from usuario where Email = :email";
+        $sentencia = $conexion->prepare($sentenciaTexto);
+
+        $sentencia->bindParam(':email', $email);
+
+        
+
+        $sentencia->execute();
+
+        $resultado = $sentencia->fetchAll();
+
+        foreach ($resultado as $resultados) {
+            echo $resultados['Email'];
+        }
+        
+        echo $resultado;
+
+        // if ($email == $sentencia) {
+            
+        // }
+
+        $conexion = cerrarBd();
+    }
 
     function posicion(){
         $_SESSION['posicion']++;
