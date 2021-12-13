@@ -37,7 +37,7 @@
 
     <!--VIDEOS-->
     <section class="home" id="home">
-        <video class="video-slide active" src="img/videoFinal.mp4" id="video-home" autoplay muted loop></video>
+        <video class="video-slide active" src="img/juegos.mp4" id="video-home" autoplay muted loop></video>
         <video class="video-slide" src="img/videoEntrada.mp4" id="video-centro" autoplay muted loop></video>
         <video class="video-slide" src="img/03.mp4" id="video-metodologia" autoplay muted loop></video>
         <video class="video-slide" src="img/01.mp4" id="video-equipo" autoplay muted loop></video>
@@ -50,7 +50,7 @@
                 ¡Conoce más sobre nosotros <span>jugando</span> a una serie de juegos que nuestros própios
                 <span>alumnos</span> han creado!
             </p>
-            <a href="paginasHtml/login.html">¡Adéntrate en nuestra aventura!</a>
+            <a href="paginasHtml/login.php">¡Adéntrate en nuestra aventura!</a>
         </div>
 
         <div class="content" id="content-meto">
@@ -227,9 +227,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
-    <?php
-        include ("./script.php");
-    ?>
+    <script src="/script.js"></script>
 </body>
 
 </html>

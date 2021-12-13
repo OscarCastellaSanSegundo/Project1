@@ -1,8 +1,4 @@
-<?php
-    session_start();
-?>
 
-<script>
 //MENU RESPONSIVE
 const menuBtn = document.querySelector(".menu-btn");
 const navigation = document.querySelector(".navigation");
@@ -95,4 +91,3 @@ let menuContacto = document.querySelector('.contacto');
 toggle.onclick= function(){
     menuContacto.classList.toggle('active')
 }
-</script>

@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+body{
+background-image: url(../img/cep033.jpg) ;
+
+ font-family: "Poppins", sans-serif;
+
+}
+
+.container-principal{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.titulo-form{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.contenido-form{
+    border-radius: 2%;
+    width: 600px;
+    height: 380px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -10px 10px 44px -6px rgba(0,0,0,0.4);
+    -webkit-box-shadow: -10px 10px 44px -6px rgba(0,0,0,0.4);
+    -moz-box-shadow: -10px 10px 44px -6px rgba(0,0,0,0.4);
+}
+
+.boton-login{
+    margin-top: 500px;
+    margin: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;  
+}
+
+.miBtn{
+    margin:2px;
+}
+.registrate{
+    padding-right: 20px;
+    display: flex;
+    justify-content: flex-end;   
+}
+
+.margenFormulario{
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}

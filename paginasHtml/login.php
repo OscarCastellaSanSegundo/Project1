@@ -31,11 +31,11 @@
            
             <div class="boton-login">
                
-                <a href="../index.html"><input type="button" class="btn btn-dark miBtn" value="Cancelar"></input></a>
+                <a href="../index.php"><input type="button" class="btn btn-dark miBtn" value="Cancelar"></input></a>
                 <button type="submit" class="btn btn-primary miBtn">Login</button>
             </div>
             <div class="registrate">
-                <a href="registrate.html">Registrate</a>
+                <a href="registrate.php">Registrate</a>
             </div>
             
           </form>
