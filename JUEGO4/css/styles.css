@@ -845,8 +845,9 @@ html {
     background-size: cover;
     position: fixed;
     background-image: url("../img/batirRecord.png");
-    left: 500px;
-    top: 540px;
+    left: 1050px;
+    top: 620px;
+    z-index: -40;
 }
 
 #opcionGanar2{
@@ -855,9 +856,10 @@ html {
     width: 280px;
     background-size: cover;
     position: fixed;
-    background-image: url("../img/salir.png");
-    left: 900px;
+    background-image: url("../img/guardarPuntuacion.png");
+    left: 1050px;
     top: 540px;
+    z-index: -40;
 }
 
 #salirJuego{
@@ -871,35 +873,79 @@ html {
     z-index: 30;
 }
 
-.partidaGanada {
-    z-index: -30;
-    background-image: url("../img/hasGanado.png");
-    height: 420px;
-    width: 1200px;
-    background-size: cover;
-    position: fixed;
-    left: 400px;
-    top: 200px;
-}
-
 #puntuacionJugador{
     height: 60px;
     width: 280px;
     position: fixed;
     left: 900px;
     top: 540px;
+    z-index: -32;
 }
 
 #mostrarPuntuacion{
-    z-index: 29;
+    z-index: -32;
     height: 400px;
     width: 1200px;
     position: fixed;
-    left: 1520px;
-    top: 565px;
-    font-size: 55px;
+    left: 880px;
+    top: 490px;
+    text-shadow: -2px -2px 2px #000, 2px 2px 2px #000, -2px 2px 2px #000, 2px -2px 2px #000;
+    color: rgb(68, 139, 1);
+    font-size: 40px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: rgb(0, 0, 0);
+    
+}
+
+#mostrarTiempoRestante{
+    z-index: 32;
+    height: 400px;
+    width: 1200px;
+    position: fixed;
+    left: 880px;
+    top: 535px;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: -2px -2px 2px #000, 2px 2px 2px #000, -2px 2px 2px #000, 2px -2px 2px #000;
+    color: rgb(68, 139, 1);
+}
+
+#mostrarMovimientos{
+    z-index: 32;
+    height: 400px;
+    width: 1200px;
+    position: fixed;
+    left: 880px;
+    top: 587px;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: -2px -2px 2px #000, 2px 2px 2px #000, -2px 2px 2px #000, 2px -2px 2px #000;
+    color: rgb(145, 0, 0);
+}
+
+#mostrarBonus{
+    z-index: 32;
+    height: 400px;
+    width: 1200px;
+    position: fixed;
+    left: 880px;
+    top: 637px;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: -2px -2px 2px #000, 2px 2px 2px #000, -2px 2px 2px #000, 2px -2px 2px #000;
+    color: rgb(68, 139, 1);
+}
+
+#mostrarTotal{
+    z-index: 32;
+    height: 400px;
+    width: 1200px;
+    position: fixed;
+    left: 880px;
+    top: 713px;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: -2px -2px 2px #000, 2px 2px 2px #000, -2px 2px 2px #000, 2px -2px 2px #000;
+    color: rgb(68, 139, 1);
 }
 
 #flecha{
@@ -1004,3 +1050,15 @@ html {
     left: 650px;
     top: 850px;
 }
+
+.partidaGanada {
+    z-index: -30;
+    background-image: url("../img/hasGanado.png");
+    height: 700px;
+    width: 1100px;
+    background-size: cover;
+    position: fixed;
+    left: 400px;
+    top: 100px;
+}
+

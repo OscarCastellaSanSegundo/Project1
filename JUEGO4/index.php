@@ -115,11 +115,7 @@
         </div>
         
         <div class="partidaGanada">
-            <div id="opcionGanar1" onclick = "window.location.href='index.php'"></div>
-            <div id="opcionGanar2" onclick = "window.location.href='inicio.php'"></div>
-            <div id="puntuacionJugador">
-                <p id="mostrarPuntuacion"></p>
-            </div>
+            
         </div>
 
         <div class="contador">
@@ -137,6 +133,17 @@
         <div id="seleccionarPuerta5"></div>
 
         <div id="ayudaSaltar"></div>
+
+        <div id="puntuacionJugador">
+            <p id="mostrarPuntuacion"></p>
+            <p id="mostrarTiempoRestante"></p>
+            <p id="mostrarMovimientos"></p>
+            <p id="mostrarBonus"></p>
+            <p id="mostrarTotal"></p>
+        </div>
+
+        <div id="opcionGanar1" onclick = "window.location.href='index.php'"></div>
+        <div id="opcionGanar2" onclick = "window.location.href='inicio.php'"></div>
     </div>
 
    

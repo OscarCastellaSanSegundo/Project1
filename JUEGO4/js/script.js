@@ -14,6 +14,7 @@ let pisoActual = 0;
 let teclado;
 let teclado1;
 let tiempoAcabado;
+let tiempoRestante;
 let altura = 150;
 let posicionIzquierda1 = 1125;
 let posicionIzquierda;
@@ -99,14 +100,14 @@ var dificultad = readCookie( "dificultad" );
 
 if (dificultad == 16) {  //cambia el tiempo segun la dificultad
     min = 1;
-    sec = 10; 
+    sec = 10; //70 * 14 == 980  
 } else if (dificultad == 8) { 
-    min = 1;
+    min = 1;    // 90 * 11 == 990
     sec = 30;
 } else {
     dificultad = 4; 
     min = 1;
-    sec = 50;
+    sec = 50; //110 * 9 == 990
 } 
 
 function readCookie(name) {
@@ -1801,17 +1802,54 @@ function partidaGanada() {
 
     if (pergaminosConseguidos == 11) {
         let imagenGameWin;
+        let escribirPuntos;
+        let escribirBonus;
+        let puntuacionJugador;
+        let cambiarOpcion1;
+        let cambiarOpcion2;
         ganarSonido.play();
         sonidoTrafico.pause();
+        cambiarOpcion1 = document.getElementById("opcionGanar1");
+        cambiarOpcion2 = document.getElementById("opcionGanar2");
+        puntuacionJugador = document.getElementById("puntuacionJugador");
         imagenGameWin = document.getElementsByClassName("partidaGanada");
+        cambiarOpcion1.style.zIndex = "32";
+        cambiarOpcion2.style.zIndex = "32";
+        puntuacionJugador.style.zIndex = "31";
         imagenGameWin[0].style.zIndex = "30";
         clearInterval(ejectuarPrograma2);
         clearInterval(ejectuarLanzarLadrillos);
         clearInterval(ejectuarPrograma3);
         clearInterval(ejectuarPrograma);
-        puntuacionObtenida = puntuacionObtenida * 15;
-        puntuacionObtenida = puntuacionObtenida + contadorMovimientos;
-        puntuacionObtenida = document.getElementById('mostrarPuntuacion').innerHTML = puntuacionObtenida;
+
+        if (dificultad == 16) { //70
+            tiempoRestante = 70 - puntuacionObtenida;
+            tiempoRestante = tiempoRestante * 200;
+            puntuacionObtenida = puntuacionObtenida * 57;
+            escribirPuntos = puntuacionObtenida;
+            escribirBonus = 2500;
+            puntuacionObtenida = puntuacionObtenida - contadorMovimientos + escribirBonus + tiempoRestante;
+        }else if (dificultad == 8) { //90
+            tiempoRestante = 90 - puntuacionObtenida;
+            tiempoRestante = tiempoRestante * 60;
+            puntuacionObtenida = puntuacionObtenida * 44;
+            escribirPuntos = puntuacionObtenida;
+            escribirBonus = 1000;
+            puntuacionObtenida = puntuacionObtenida - contadorMovimientos + escribirBonus + tiempoRestante;
+        }else{ //110
+            tiempoRestante = 110 - puntuacionObtenida;
+            tiempoRestante = tiempoRestante * 20;
+            puntuacionObtenida = puntuacionObtenida * 36;
+            escribirPuntos = puntuacionObtenida;
+            escribirBonus = 100;
+            puntuacionObtenida = puntuacionObtenida - contadorMovimientos + escribirBonus + tiempoRestante;
+        }
+        
+        escribirPuntos = document.getElementById('mostrarPuntuacion').innerHTML = "+ " + escribirPuntos;
+        tiempoRestante = document.getElementById('mostrarTiempoRestante').innerHTML = "+ " + tiempoRestante;
+        contadorMovimientos = document.getElementById('mostrarMovimientos').innerHTML = "- " + contadorMovimientos;
+        escribirBonus = document.getElementById('mostrarBonus').innerHTML = "+ " + escribirBonus;
+        puntuacionObtenida = document.getElementById('mostrarTotal').innerHTML = "+ " + puntuacionObtenida;
         document.cookie = "puntuacionFinal=" + puntuacionObtenida;
     }
 }
