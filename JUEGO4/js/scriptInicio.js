@@ -78,9 +78,11 @@ function salirDificultad() {
     let cambiarSalir;
 
     if (instruccionesLeidas == true) {
-    } else {
         cambiarTaparJugar = document.getElementById ("taparJugar");
         cambiarTaparJugar.style.zIndex = "-25";
+    } else {
+        cambiarTaparJugar = document.getElementById ("taparJugar");
+        cambiarTaparJugar.style.zIndex = "25";
     }
     
     cambiarDificultad = document.getElementById ("menuDificultad");

@@ -1845,11 +1845,13 @@ function partidaGanada() {
             puntuacionObtenida = puntuacionObtenida - contadorMovimientos + escribirBonus + tiempoRestante;
         }
         
+        document.cookie = "puntuacionFinal=" + puntuacionObtenida;
         escribirPuntos = document.getElementById('mostrarPuntuacion').innerHTML = "+ " + escribirPuntos;
         tiempoRestante = document.getElementById('mostrarTiempoRestante').innerHTML = "+ " + tiempoRestante;
         contadorMovimientos = document.getElementById('mostrarMovimientos').innerHTML = "- " + contadorMovimientos;
         escribirBonus = document.getElementById('mostrarBonus').innerHTML = "+ " + escribirBonus;
         puntuacionObtenida = document.getElementById('mostrarTotal').innerHTML = "+ " + puntuacionObtenida;
-        document.cookie = "puntuacionFinal=" + puntuacionObtenida;
+
+        
     }
 }
