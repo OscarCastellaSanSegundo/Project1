@@ -13,7 +13,7 @@
             if (isset($_POST['insertarRegistro'])) {
 
                 insertarUsuario($_POST['emailUsuario'], $_POST['nombreUsuario'], $_POST['apellidosUsuario'], $_POST['contraUsuario']);   
-
+                header("Location: ../paginasHtml/login.php");
             }
 
             if (isset($_GET['loguearUsuario'])) {

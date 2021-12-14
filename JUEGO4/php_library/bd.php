@@ -24,7 +24,7 @@
     function seleccionarUsuarios(){
 
         $conexion = abrirBd();
-        $sentenciaTexto = "select usuario.Nombre, usuario.Apellido ,usuario_juego_curso.Puntuacion from usuario_juego_curso join usuario on usuario.Id = usuario_juego_curso.IdUsuario where usuario_juego_curso.IdJuego = 4 order by usuario_juego_curso.Puntuacion desc limit 14";
+        $sentenciaTexto = "select usuario.Nombre, usuario.Apellido ,usuario_juego_curso.Puntuacion from usuario_juego_curso join usuario on usuario.Id = usuario_juego_curso.IdUsuario where usuario_juego_curso.IdJuego = 4 order by usuario_juego_curso.Puntuacion asc limit 14";
 
         $sentencia = $conexion->prepare($sentenciaTexto);
         $sentencia->execute();
@@ -35,15 +35,34 @@
 
         return $resultado;
     }
+
+    function obtenerSession(){
+        $conexion = abrirBd();
+        $sentenciaTexto = "select UsuarioActual from session_iniciada";
+
+        $sentencia = $conexion->prepare($sentenciaTexto);
+        $sentencia->execute();
+
+        $resultado = $sentencia->fetchAll();
+
+        $resultado2 = $resultado[0]['UsuarioActual'];
+
+        $conexion = cerrarBd();
+
+
+        return $resultado2;
+    }
    
     function insertarPuntuacion(){
+
+        $sessionActual = obtenerSession();
 
         if ($_COOKIE["puntuacionFinal"] == null) {
         
         } else {
             $conexion = abrirBd();
             $i = 0;
-
+            $_COOKIE['puntuacionFinal'] = null;
             $sentenciaTexto = "select Puntuacion, Id from usuario_juego_curso";
             $sentencia = $conexion->prepare($sentenciaTexto);
 
@@ -52,35 +71,44 @@
             $longitudArray = (count($resultado));
 
             while ($i <= $longitudArray) {
-                if ($resultado[$i]['Id'] == $_COOKIE['sessionActual'] && $resultado[$i]['Puntuacion'] >= $_COOKIE['puntuacionFinal']) {
-                    $cambiarPuntuacion = false;
+                if ($resultado[$i]['Id'] == $sessionActual && $resultado[$i]['Puntuacion'] > $_COOKIE['puntuacionFinal']) {
+                    $cambiarPuntuacion = 1;
                     $i = $longitudArray + 1;
-                } else if ($resultado[$i]['Id'] == $_COOKIE['sessionActual'] && $resultado[$i]['Puntuacion'] < $_COOKIE['puntuacionFinal']) {
-                    $cambiarPuntuacion = true;
-                    $i = $longitudArray + 1;       
+                    $_COOKIE['puntuacionFinal'] = null; 
+                } else if ($resultado[$i]['Id'] == $sessionActual && $resultado[$i]['Puntuacion'] < $_COOKIE['puntuacionFinal']) {
+                    $cambiarPuntuacion = 2;
+                    $i = $longitudArray + 1;
+                    $_COOKIE['puntuacionFinal'] = null;       
                 }else{
-                    $i++;
+                    if ($_COOKIE['puntuacionFinal'] == null) {
+                        $cambiarPuntuacion = 2;
+                        $i = $longitudArray + 1;
+                    } else {
+                        $cambiarPuntuacion = 0;
+                        $i++;
+                    }
+                    
                 }
                 
             }
             
             $conexion = cerrarBd();
 
-            if ($cambiarPuntuacion == null) {
+            if ($cambiarPuntuacion == 0) {
                 $conexion = abrirBd();
 
                 $sentenciaTexto = "insert into usuario_juego_curso values (null, 4, :id_usuario, 3, :puntuacion )";
                 $sentencia = $conexion->prepare($sentenciaTexto);
 
 
-                $sentencia->bindParam(':id_usuario', $_COOKIE['sessionActual']);
+                $sentencia->bindParam(':id_usuario', $sessionActual);
                 // $sentencia->bindParam(':id_curso', $cursoUsuario);
                 $sentencia->bindParam(':puntuacion', $_COOKIE['puntuacionFinal']);
 
                 $sentencia->execute();   
                 $conexion = cerrarBd();
 
-            } else if ($cambiarPuntuacion == true) {
+            } else if ($cambiarPuntuacion == 1) {
 
                 $conexion = abrirBd();
 
@@ -88,7 +116,7 @@
                 $sentencia = $conexion->prepare($sentenciaTexto);
 
 
-                $sentencia->bindParam(':id_usuario', $_COOKIE['sessionActual']);
+                $sentencia->bindParam(':id_usuario', $sessionActual);
                 // $sentencia->bindParam(':id_curso', $cursoUsuario);
                 $sentencia->bindParam(':puntuacion', $_COOKIE['puntuacionFinal']);
 

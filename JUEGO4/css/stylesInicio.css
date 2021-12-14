@@ -206,5 +206,16 @@ body {
     top: 570px;
 }
 
+#salirJuego{
+    height: 60px;
+    width: 280px;
+    background-size: cover;
+    position: fixed;
+    background-image: url("../img/salir.png");
+    left: 580px;
+    top: 710px;
+    z-index: 30;
+}
+
 
 

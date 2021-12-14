@@ -63,6 +63,8 @@
     <div id="taparJugar"></div>
 
     <div id="giffInstrucciones"></div>
+
+    <div id="salirJuego" onclick="window.location.href='../paginasHtml/juegos.php'"></div>
     
 </body>
 <script src="js/scriptInicio.js"></script>

@@ -18,24 +18,37 @@
     function cerrarBd(){
         return null;
     }
+
+    function cambiarSession($sesionActual){
+        $conexion = abrirBd();
+        $sentenciaTexto = "update session_iniciada set UsuarioActual = :session";
+
+        $sentencia = $conexion->prepare($sentenciaTexto);
+        $sentencia->bindParam(':session', $sesionActual);
+
+        $sentencia->execute();
+
+        $conexion = cerrarBd();
+    }
    
     function insertarUsuario($email, $nombre, $apellidos, $password){
         $conexion = abrirBd();
-
+        $paswordEncriptado=password_hash($password,PASSWORD_DEFAULT);
         $sentenciaTexto = "insert into usuario values (null, :email, :Nombre, :Apellido, :Password, false, 1)";
         $sentencia = $conexion->prepare($sentenciaTexto);
 
         $sentencia->bindParam(':email', $email);
         $sentencia->bindParam(':Nombre', $nombre);
         $sentencia->bindParam(':Apellido', $apellidos);
-        $sentencia->bindParam(':Password', $password);
+        $sentencia->bindParam(':Password', $paswordEncriptado);
 
         $sentencia->execute();
 
-        $conexion = cerrarBd();
+        
     }
     
     function logInUser($email, $password){
+
         $i = 0;
         $conexion = abrirBd();
         $sentenciaTexto = "select Email, Password, Id from usuario";
@@ -46,9 +59,13 @@
         $longitudArray = (count($resultado));
 
         while ($i <= $longitudArray) {
-            if ($resultado[$i]['Email'] == $email && $resultado[$i]['Password'] == $password) {
+            if ($resultado[$i]['Email'] == $email && password_verify($password,$resultado[$i]['Password'])) {
                 $sesionIniciada = true;
-                $_COOKIE['sessionActual'] = $resultado[$i]['Id'];
+                $sesionActual = $resultado[$i]['Id'];
+                // setcookie("sessionActual", $resultado[$i]['Id'], strtotime( '+30 days' ), "../JUEGO4/php_library/bd.php");
+                // $_COOKIE['sessionActual'] = $resultado[$i]['Id'];
+                // $_SESSION['sessionActual'] = $resultado[$i]['Id'];
+                cambiarSession($sesionActual);
                 $i = $longitudArray + 1;
             } else {
                 $sesionIniciada = false;

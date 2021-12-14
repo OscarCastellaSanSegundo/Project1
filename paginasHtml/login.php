@@ -21,12 +21,12 @@
            <form action="../php_controllers/php_controllers.php" method="GET">
             <div class="mb-3 m-4">
               <label for="inputEmail" class="form-label">Email </label>
-              <input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp">
+              <input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" required>
               <div id="emailHelp" class="form-text">Nunca usaremos tu mail para terceros.</div>
             </div>
             <div class="mb-3 m-4">
               <label for="inputPassword" class="form-label">Password</label>
-              <input type="password" class="form-control" id="inputPassword" name="inputPassword">
+              <input type="password" class="form-control" id="inputPassword" name="inputPassword" required>
             </div>
            
             <div class="boton-login">
