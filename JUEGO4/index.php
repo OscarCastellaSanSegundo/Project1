@@ -144,6 +144,10 @@
 
         <div id="opcionGanar1" onclick = "window.location.href='index.php'"></div>
         <div id="opcionGanar2" onclick = "window.location.href='inicio.php'"></div>
+
+        <div id="pergaminosNoConseguidos">
+            <p>No has conseguido todos los pergaminos!</p>
+        </div>
     </div>
 
    

@@ -1062,3 +1062,16 @@ html {
     top: 100px;
 }
 
+#pergaminosNoConseguidos{
+    z-index: -32;
+    height: 400px;
+    width: 1200px;
+    position: fixed;
+    left: 500px;
+    top: 470px;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: -2px -2px 2px #000, 2px 2px 2px #000, -2px 2px 2px #000, 2px -2px 2px #000;
+    color: rgb(228, 194, 83);
+}
+

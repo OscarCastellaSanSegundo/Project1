@@ -805,7 +805,7 @@ function moverse(){
                     posicionJugador.style.backgroundImage = "url(img/AnimacionJugador/saltar1.png)";
                     posicionJugador.style.bottom = posicion + 'px';
                     pisoActual = 3;    
-                }else if (posicionSalto > 450 && posicionSalto < 510 && posicionJugador.style.bottom == "945px" && pergamino[9] == null) {
+                }else if (posicionSalto > 440 && posicionSalto < 520 && posicionJugador.style.bottom == "945px" && pergamino[9] == null) {
                     cambiarPergamino = document.getElementById("pergaminoGestioAdministrativa");
                     ActivarPergaminoNav = document.getElementById("pergamino9");
                     numPergamino = 9;
@@ -1465,7 +1465,7 @@ function moverse(){
     }else if(teclaPresionada[2] == true && gameOver == false){ //ARRIBA (ENTRAR) -----------------------------------------------------------------------------------------------------------------------------
         posicionJugador = document.getElementById("jugador");
         posicion = parseInt(posicionJugador.style.left);
-        if ( (posicionJugador.style.bottom == '480px') && (posicion > 735 && posicion < 795) && pergamino[0] == null){ //mira que cuando pulsa la tecla arriba este en la zona de la puerta
+        if ( (posicionJugador.style.bottom == '480px') && (posicion > 725 && posicion < 800) && pergamino[0] == null){ //mira que cuando pulsa la tecla arriba este en la zona de la puerta
             cambiarFondo = document.getElementsByClassName("imagenFondo1");
             cambiarFondoVacio = document.getElementsByClassName("fondoVacio");
             cambiarHabitacion = document.getElementsByClassName("imagenPiso1");
@@ -1489,7 +1489,7 @@ function moverse(){
             posicionJugador.style.bottom = "711px";
             dentroHabitacion = true;
             puertaSonido.play(); 
-        }else if ((posicionJugador.style.bottom == '945px') && (posicion > 980 && posicion < 1020) && pergamino[2] == null) {
+        }else if ((posicionJugador.style.bottom == '945px') && (posicion > 970 && posicion < 1030) && pergamino[2] == null) {
             cambiarFondo = document.getElementsByClassName("imagenFondo3");
             cambiarFondoVacio = document.getElementsByClassName("fondoVacio");
             cambiarHabitacion = document.getElementsByClassName("imagenPiso3");
@@ -1534,11 +1534,14 @@ function moverse(){
 
         if (posicion > 805 && posicion < 900 && posicionJugador.style.bottom == "2125px" && botonGrua == false) { //comprueba que esta en la posicion indicada para apretar el boton y que no ha sido apretado antes
             let cambiarBotonGrua;
+            let zindexJugador;
             gruaSonido.play();
             cambiarBotonGrua = document.getElementsByClassName("botonGrua");
+            zindexJugador = document.getElementsByClassName("fondoVacio");
             cambiarGrua = document.getElementById("grua");
             ocultarGrua = document.getElementById("taparGrua");
             cambiarPergamino = document.getElementById("pergaminoGestioVendes");
+            zindexJugador[0].style.zIndex = "5";
             cambiarBotonGrua[0].style.backgroundImage = "url(img/botonOn.png)";
             cambiarBotonGrua[0].style.animation = "sinAnimacion";
             ocultarGrua.style.zIndex = "3";
@@ -1791,67 +1794,79 @@ function moverGrua(cambiarGrua, cambiarPergamino){ //mueve la grua al pulsarel b
 
 function partidaGanada() {
     let pergaminosConseguidos = 0;
-    for (let i = 0; i < 11; i++) {
+    let pergaminosNoConseguidos;
 
-        if (pergamino[i] == true) {
-            pergaminosConseguidos++;
+    if (pergamino[10] == true) {
+
+        for (let i = 0; i < 11; i++) {
+            if (pergamino[i] == true) {
+                pergaminosConseguidos++;
+            }
+        }
+    
+        if (pergaminosConseguidos == 11) {
+            let imagenGameWin;
+            let escribirPuntos;
+            let escribirBonus;
+            let puntuacionJugador;
+            let cambiarOpcion1;
+            let cambiarOpcion2;
+            ganarSonido.play();
+            sonidoTrafico.pause();
+            cambiarOpcion1 = document.getElementById("opcionGanar1");
+            cambiarOpcion2 = document.getElementById("opcionGanar2");
+            puntuacionJugador = document.getElementById("puntuacionJugador");
+            imagenGameWin = document.getElementsByClassName("partidaGanada");
+            cambiarOpcion1.style.zIndex = "32";
+            cambiarOpcion2.style.zIndex = "32";
+            puntuacionJugador.style.zIndex = "31";
+            imagenGameWin[0].style.zIndex = "30";
+            clearInterval(ejectuarPrograma2);
+            clearInterval(ejectuarLanzarLadrillos);
+            clearInterval(ejectuarPrograma3);
+            clearInterval(ejectuarPrograma);
+    
+            if (dificultad == 16) { //70
+                tiempoRestante = 70 - puntuacionObtenida;
+                tiempoRestante = tiempoRestante * 200;
+                puntuacionObtenida = puntuacionObtenida * 57;
+                escribirPuntos = puntuacionObtenida;
+                escribirBonus = 2500;
+                puntuacionObtenida = puntuacionObtenida - contadorMovimientos + escribirBonus + tiempoRestante;
+            }else if (dificultad == 8) { //90
+                tiempoRestante = 90 - puntuacionObtenida;
+                tiempoRestante = tiempoRestante * 60;
+                puntuacionObtenida = puntuacionObtenida * 44;
+                escribirPuntos = puntuacionObtenida;
+                escribirBonus = 1000;
+                puntuacionObtenida = puntuacionObtenida - contadorMovimientos + escribirBonus + tiempoRestante;
+            }else{ //110
+                tiempoRestante = 110 - puntuacionObtenida;
+                tiempoRestante = tiempoRestante * 20;
+                puntuacionObtenida = puntuacionObtenida * 36;
+                escribirPuntos = puntuacionObtenida;
+                escribirBonus = 100;
+                puntuacionObtenida = puntuacionObtenida - contadorMovimientos + escribirBonus + tiempoRestante;
+            }
+            
+            document.cookie = "puntuacionFinal=" + puntuacionObtenida;
+            escribirPuntos = document.getElementById('mostrarPuntuacion').innerHTML = "+ " + escribirPuntos;
+            tiempoRestante = document.getElementById('mostrarTiempoRestante').innerHTML = "+ " + tiempoRestante;
+            contadorMovimientos = document.getElementById('mostrarMovimientos').innerHTML = "- " + contadorMovimientos;
+            escribirBonus = document.getElementById('mostrarBonus').innerHTML = "+ " + escribirBonus;
+            puntuacionObtenida = document.getElementById('mostrarTotal').innerHTML = "+ " + puntuacionObtenida;
+    
+            
+        }else {
+            gameOver = true;
+            clearInterval(ejectuarLanzarLadrillos);
+            finPartida();
+            pergaminosNoConseguidos = document.getElementById("pergaminosNoConseguidos");
+            pergaminosNoConseguidos.style.zIndex = "30";
         }
 
+    }else{
+
     }
-
-
-    if (pergaminosConseguidos == 11) {
-        let imagenGameWin;
-        let escribirPuntos;
-        let escribirBonus;
-        let puntuacionJugador;
-        let cambiarOpcion1;
-        let cambiarOpcion2;
-        ganarSonido.play();
-        sonidoTrafico.pause();
-        cambiarOpcion1 = document.getElementById("opcionGanar1");
-        cambiarOpcion2 = document.getElementById("opcionGanar2");
-        puntuacionJugador = document.getElementById("puntuacionJugador");
-        imagenGameWin = document.getElementsByClassName("partidaGanada");
-        cambiarOpcion1.style.zIndex = "32";
-        cambiarOpcion2.style.zIndex = "32";
-        puntuacionJugador.style.zIndex = "31";
-        imagenGameWin[0].style.zIndex = "30";
-        clearInterval(ejectuarPrograma2);
-        clearInterval(ejectuarLanzarLadrillos);
-        clearInterval(ejectuarPrograma3);
-        clearInterval(ejectuarPrograma);
-
-        if (dificultad == 16) { //70
-            tiempoRestante = 70 - puntuacionObtenida;
-            tiempoRestante = tiempoRestante * 200;
-            puntuacionObtenida = puntuacionObtenida * 57;
-            escribirPuntos = puntuacionObtenida;
-            escribirBonus = 2500;
-            puntuacionObtenida = puntuacionObtenida - contadorMovimientos + escribirBonus + tiempoRestante;
-        }else if (dificultad == 8) { //90
-            tiempoRestante = 90 - puntuacionObtenida;
-            tiempoRestante = tiempoRestante * 60;
-            puntuacionObtenida = puntuacionObtenida * 44;
-            escribirPuntos = puntuacionObtenida;
-            escribirBonus = 1000;
-            puntuacionObtenida = puntuacionObtenida - contadorMovimientos + escribirBonus + tiempoRestante;
-        }else{ //110
-            tiempoRestante = 110 - puntuacionObtenida;
-            tiempoRestante = tiempoRestante * 20;
-            puntuacionObtenida = puntuacionObtenida * 36;
-            escribirPuntos = puntuacionObtenida;
-            escribirBonus = 100;
-            puntuacionObtenida = puntuacionObtenida - contadorMovimientos + escribirBonus + tiempoRestante;
-        }
-        
-        document.cookie = "puntuacionFinal=" + puntuacionObtenida;
-        escribirPuntos = document.getElementById('mostrarPuntuacion').innerHTML = "+ " + escribirPuntos;
-        tiempoRestante = document.getElementById('mostrarTiempoRestante').innerHTML = "+ " + tiempoRestante;
-        contadorMovimientos = document.getElementById('mostrarMovimientos').innerHTML = "- " + contadorMovimientos;
-        escribirBonus = document.getElementById('mostrarBonus').innerHTML = "+ " + escribirBonus;
-        puntuacionObtenida = document.getElementById('mostrarTotal').innerHTML = "+ " + puntuacionObtenida;
-
-        
-    }
+    
 }
