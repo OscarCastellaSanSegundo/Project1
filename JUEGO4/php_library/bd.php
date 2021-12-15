@@ -24,7 +24,7 @@
     function seleccionarUsuarios(){
 
         $conexion = abrirBd();
-        $sentenciaTexto = "select usuario.Nombre, usuario.Apellido ,usuario_juego_curso.Puntuacion from usuario_juego_curso join usuario on usuario.Id = usuario_juego_curso.IdUsuario where usuario_juego_curso.IdJuego = 4 order by usuario_juego_curso.Puntuacion desc limit 14";
+        $sentenciaTexto = "select usuario.Nombre, usuario.Apellido ,usuario_juego_curso.Puntuacion from usuario_juego_curso join usuario on usuario.Id = usuario_juego_curso.IdUsuario where usuario_juego_curso.IdJuego = 4 order by usuario_juego_curso.Puntuacion desc limit 10";
 
         $sentencia = $conexion->prepare($sentenciaTexto);
         $sentencia->execute();
