@@ -29,19 +29,32 @@ html {
      
 }
 
+@font-face {
+    font-family: "camello";
+    src: url(../fuentes/KIdDOS-Regular.ttf);
+}
+
+@font-face {
+    font-family: "camello2";
+    src: url(../fuentes/alamain1.ttf);
+}
+
 th {     
-    font-size: 13px;     
-    font-weight: normal;     
+    font-size: 17px;     
+    /* font-weight: normal;      */
     padding: 8px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-style: oblique;    
+    font-family: "camello";
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    /* font-style: oblique;     */
     background: #a17f0f;
     border-top: 4px solid #0e0101;    
     border-bottom: 1px solid rgb(0, 0, 0); 
     color: rgb(0, 0, 0); 
 }
 
-td {    
+td {
+    font-size: 17px;
+    font-family: "camello";    
     padding: 8px;     
     background: #b6ad5c;     
     border-bottom: 1px solid rgb(0, 0, 0);

@@ -33,7 +33,7 @@
         <div id="ranking">
             <table class="tablaPuntuacion">
                 <tr>
-                    <th>Posicion</th>
+                    <th>Pos.</th>
                     <th>Nombre</th>
                     <th>Apellidos</th>
                     <th>Puntuación</th>
