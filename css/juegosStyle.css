@@ -1,3 +1,15 @@
+
+body h1{
+    color: white;
+    text-align: center;
+}
+
+
+
+
+
+
+
 .juego1Giff {
     background-size: cover;
     background-image: url(../img/JUEGO1.gif);

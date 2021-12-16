@@ -86,6 +86,7 @@ equipo.addEventListener('click', () => {
     videoSlideActive = videoEquipo;
 })
 
+//BOTÓN CONTACTO - REDES
 let toggle = document.querySelector('.toggle');
 let menuContacto = document.querySelector('.contacto');
 toggle.onclick= function(){

@@ -11,6 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CEP Politècnics - Portes Obertes</title>
     <script src="https://kit.fontawesome.com/f17ab486c8.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -27,8 +29,8 @@
                 <a id="metodologia" href="#">Metodología</a>
                 <a id="grados" href="#">Grados</a>
                 <a id="equipo" href="#">Equipo</a>
-                <a id="juegos" href="#"><span style="color: gold;">Juegos</span></a>
-                <a id="contacto" href="#">Idioma</a>
+                <a id="juegos" href="./paginasHtml/juegos.php"><span style="color: gold;">Juegos</span></a>
+                <a id="contacto" href="./paginasHtml/login.php">Admin</a>
             </div>
         </div>
     </header>
@@ -108,38 +110,6 @@
         </div>
     </section>
 
-    <!--LOGIN JUEGOS-->
-    <div class="modal fade" id="myModal2" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal-title">LOGIN</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">Tu correo no será utilizado por terceros.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div>
-                            <label for="registro" class="form-text">¿Aún no estás registrado? <br> <a h="#"> Click
-                                    aquí.</a> <br><br></label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Entrar</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!--FIN MODAL-->
-    </div>
-
     <div class="separator"></div>
 
     <!--SECCIÓN DE CONTENIDO-->
@@ -207,12 +177,6 @@
             C/Santa Anna, 28 – <br>
             08002 Barcelona<br>
             Tel.: 93 302 41 06
-        </div>
-        <div class="footer-admin">
-            <a href="#" class="footer-btn">
-                <i class="fas fa-user"></i>
-                &nbsp ADMIN
-            </a>
         </div>
     </section>
 

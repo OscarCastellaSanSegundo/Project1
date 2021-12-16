@@ -488,7 +488,7 @@ FOOTER
     display: grid;
 
     gap: 1rem;
-    grid-template-rows:  8rem 8rem;
+    grid-template-rows: 8rem 8rem;
     color: white;
     background-color: #212529;
     padding: 40px;
@@ -533,11 +533,144 @@ FOOTER
     align-items: center;
 }
 
-.footer .footer-btn:hover{
+.footer .footer-btn:hover {
     background-color: #000000;
     color: white;
 }
 
+ /*------------------------------------------------------
+PÁGINA JUEGOS
+-------------------------------------------------------*/
+
+
+.grid-juegos {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: minmax(20px, auto);
+    align-items: center;
+    text-align: center;
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+    background-position: center center;
+    background-size: cover;
+}
+
+.grid-juegos-games {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: minmax(20px, auto);
+    gap: 0.5em;
+    align-items: center;
+    text-align: center;
+}
+
+.grid-juegos .content h2 {
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 65px;
+    margin-bottom: 15px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.grid-juegos .content p {
+    padding: auto;
+    justify-content: center;
+    text-shadow: 0 1px 0 rgb(20, 9, 9), 0 6px 1px rgba(255, 251, 251, 0.1), 0 0 5px rgba(255, 255, 255, 0.1),
+        0 1px 3px rgba(255, 248, 248, 0.3), 0 3px 5px rgba(255, 255, 255, 0.2), 0 5px 10px rgba(255, 255, 255, 0.25),
+        0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
+}
+
+.grid-juegos .aventura {
+    color: rgb(139, 14, 189);
+    text-shadow: 0 1px 0 rgb(20, 9, 9), 0 6px 1px rgba(255, 251, 251, 0.1), 0 0 5px rgba(255, 255, 255, 0.1),
+        0 1px 3px rgba(255, 248, 248, 0.3), 0 3px 5px rgba(255, 255, 255, 0.2), 0 5px 10px rgba(255, 255, 255, 0.25),
+        0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
+}
+
+.grid-juegos .content a {
+    background: #1680ac;
+    padding: 15px 35px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.grid-juegos .content a:hover {
+    background: #0b3b50;
+}
+
+.juego1Giff {
+    background-size: cover;
+    background-image: url(../img/JUEGO1.gif);
+    filter: brightness(0.7);
+    width: 420px;
+    height: 305px;
+    border-radius: 4%;
+}
+
+.juego1Giff:hover {
+    border: 5px solid #1572db;
+    filter: brightness(1);
+}
+
+.juego2Giff {
+    background-size: cover;
+    background-image: url(../img/JUEGO2.gif);
+    filter: grayscale(1) contrast(0.4) brightness(1.4);
+    /* opacity: 50%; */
+    width: 420px;
+    height: 305px;
+    border-radius: 4%;
+}
+
+.juego3Giff {
+    background-size: cover;
+    background-image: url(../img/JUEGO3.gif);
+    filter: grayscale(1) contrast(0.4) brightness(1.4);
+    width: 420px;
+    height: 305px;
+    border-radius: 4%;
+}
+
+.juego4Giff {
+    background-size: cover;
+    background-image: url(../img/JUEGO4.gif);
+    background-color: rgb(19, 17, 14);
+    filter: grayscale(1) contrast(0.4) brightness(1.4);
+    /* opacity: 50%; */
+    width: 420px;
+    height: 305px;
+    border-radius: 4%;
+}
+
+@font-face {
+    font-family: "textoJuegos";
+    src: url(../fuentes/Gameplay.ttf);
+}
+
+.juegoTexto {
+    margin-top: 25px;
+    font-family: "textoJuegos";
+    font-size: 37px;
+    opacity: 100%;
+    text-align: center;
+    text-shadow: -2px -2px 2px rgb(255, 255, 255), 2px 2px 2px rgb(255, 255, 255), -2px 2px 2px rgb(255, 255, 255), 2px -2px 2px rgb(255, 255, 255);
+}
+
+.botonJuego {
+    width: 15%;
+}
+
+.contenedorBoton {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
 /*------------------------------------------------------
 MEDIA QUERYS para DISEÑO RESPONSIVE
 -------------------------------------------------------*/
@@ -616,6 +749,113 @@ MEDIA QUERYS para DISEÑO RESPONSIVE
         background-position: center;
         transition: 0.3s ease;
     }
+
+    .grid-juegos {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        align-items: center;
+        text-align: center;
+        background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .grid-juegos-games {
+margin-left: 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: minmax(20px, auto);
+        gap: 0.2em;
+        align-items: center;
+        text-align: center;
+    }
+
+    
+    .grid-juegos .content h2 {
+        font-size: 2.5em;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        line-height: 65px;
+        margin-bottom: 15px;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    .grid-juegos .content p {
+        padding: auto;
+        justify-content: center;
+        text-shadow: 0 1px 0 rgb(20, 9, 9), 0 6px 1px rgba(255, 251, 251, 0.1), 0 0 5px rgba(255, 255, 255, 0.1),
+            0 1px 3px rgba(255, 248, 248, 0.3), 0 3px 5px rgba(255, 255, 255, 0.2), 0 5px 10px rgba(255, 255, 255, 0.25),
+            0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
+    }
+
+    .grid-juegos .aventura {
+        color: rgb(139, 14, 189);
+        text-shadow: 0 1px 0 rgb(20, 9, 9), 0 6px 1px rgba(255, 251, 251, 0.1), 0 0 5px rgba(255, 255, 255, 0.1),
+            0 1px 3px rgba(255, 248, 248, 0.3), 0 3px 5px rgba(255, 255, 255, 0.2), 0 5px 10px rgba(255, 255, 255, 0.25),
+            0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
+    }
+
+    .grid-juegos .content a {
+        background: #1680ac;
+        padding: 15px 35px;
+        color: white;
+        font-size: 1.1em;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+
+    .grid-juegos .content a:hover {
+        background: #0b3b50;
+    }
+    
+    .juego1Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO1.gif);
+        filter: brightness(0.7);
+        width: 320px;
+        height: 205px;
+        border-radius: 4%;
+    }
+
+    .juego1Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
+
+    .juego2Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO2.gif);
+        filter: grayscale(1) contrast(0.4) brightness(1.4);
+        /* opacity: 50%; */
+        width: 320px;
+        height: 205px;
+        border-radius: 4%;
+    }
+
+    .juego3Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO3.gif);
+        filter: grayscale(1) contrast(0.4) brightness(1.4);
+        width: 320px;
+        height: 205px;
+        border-radius: 4%;
+    }
+
+    .juego4Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO4.gif);
+        background-color: rgb(19, 17, 14);
+        filter: grayscale(1) contrast(0.4) brightness(1.4);
+        /* opacity: 50%; */
+        width: 320px;
+        height: 205px;
+        border-radius: 4%;
+
+    }
 }
 
 @media (max-width: 560px) {
@@ -679,10 +919,6 @@ MEDIA QUERYS para DISEÑO RESPONSIVE
         text-decoration: none;
     }
 
-    .contacto li a:hover {
-        color: red;
-    }
-
     .grid-grados {
         color: white;
         gap: 1em;
@@ -725,4 +961,112 @@ MEDIA QUERYS para DISEÑO RESPONSIVE
             0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
     }
 
+
+    
+    .grid-juegos {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        align-items: center;
+        text-align: center;
+        background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .grid-juegos-games {
+        margin-left: 100px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: minmax( auto);
+        gap: 0.5em;
+        align-items: center;
+        text-align: center;
+    }
+
+    
+    .grid-juegos .content h2 {
+        font-size: 2.5em;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        line-height: 65px;
+        margin-bottom: 15px;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    .grid-juegos .content p {
+        padding: auto;
+        justify-content: center;
+        text-shadow: 0 1px 0 rgb(20, 9, 9), 0 6px 1px rgba(255, 251, 251, 0.1), 0 0 5px rgba(255, 255, 255, 0.1),
+            0 1px 3px rgba(255, 248, 248, 0.3), 0 3px 5px rgba(255, 255, 255, 0.2), 0 5px 10px rgba(255, 255, 255, 0.25),
+            0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
+    }
+
+    .grid-juegos .aventura {
+        color: rgb(139, 14, 189);
+        text-shadow: 0 1px 0 rgb(20, 9, 9), 0 6px 1px rgba(255, 251, 251, 0.1), 0 0 5px rgba(255, 255, 255, 0.1),
+            0 1px 3px rgba(255, 248, 248, 0.3), 0 3px 5px rgba(255, 255, 255, 0.2), 0 5px 10px rgba(255, 255, 255, 0.25),
+            0 10px 10px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(255, 246, 246, 0.15);
+    }
+
+    .grid-juegos .content a {
+        background: #1680ac;
+        padding: 15px 35px;
+        color: white;
+        font-size: 1.1em;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+
+    .grid-juegos .content a:hover {
+        background: #0b3b50;
+    }
+    
+    .juego1Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO1.gif);
+        filter: brightness(0.7);
+        width: 220px;
+        height: 105px;
+        border-radius: 4%;
+    }
+
+    .juego1Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
+
+    .juego2Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO2.gif);
+        filter: grayscale(1) contrast(0.4) brightness(1.4);
+        /* opacity: 50%; */
+        width: 220px;
+        height: 105px;
+        border-radius: 4%;
+    }
+
+    .juego3Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO3.gif);
+        filter: grayscale(1) contrast(0.4) brightness(1.4);
+        width: 220px;
+        height: 105px;
+        border-radius: 4%;
+    }
+
+    .juego4Giff {
+        background-size: cover;
+        background-image: url(../img/JUEGO4.gif);
+        background-color: rgb(19, 17, 14);
+        filter: grayscale(1) contrast(0.4) brightness(1.4);
+        /* opacity: 50%; */
+        width: 220px;
+        height: 105px;
+        border-radius: 4%;
+    }
 }
+
