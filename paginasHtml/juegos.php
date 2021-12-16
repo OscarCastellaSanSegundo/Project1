@@ -1,28 +1,36 @@
 
 <?php
-require_once('../php_librarys/bd.php');
-$sesionIniciada = obtenerSession();
-$juegosJugados = [false, false, false];
-$juegosJugados = comprobarPuntuacionJuegos($juegosJugados, $sesionIniciada);
+    require_once('../php_librarys/bd.php');
+    $sesionIniciada = obtenerSession();
+    $juegosJugados = [false, false, false, false, false];
+    setcookie("juego1", false, time() + (86400 * 30), "/"); // 86400 = 1 day
+    setcookie("juego2", false, time() + (86400 * 30), "/"); // 86400 = 1 day
+    setcookie("juego3", false, time() + (86400 * 30), "/"); // 86400 = 1 day
+    setcookie("juego4", false, time() + (86400 * 30), "/"); // 86400 = 1 day
+    $juegosJugados = comprobarPuntuacionJuegos($juegosJugados, $sesionIniciada);
 
-if ($juegosJugados[0] == true) {
-    $_COOKIE['juego2'] = true;
-}
+    if ($juegosJugados[1] == true) {
+        setcookie("juego1", true, time() + (86400 * 30), "/"); // 86400 = 1 day
+        $juegosJugados[2] = true;
+    }
 
-if ($juegosJugados[1] == true) {
-    $_COOKIE['juego3'] = true;
-}
+    if ($juegosJugados[2] == true) {
+        setcookie("juego2", true, time() + (86400 * 30), "/"); // 86400 = 1 day
+        $juegosJugados[3] = true;
+    }
 
-if ($juegosJugados[2] == true) {
-    setcookie("juego4", true, time() + (86400 * 30), "/"); // 86400 = 1 day
-}
+    if ($juegosJugados[3] == true) {
+        setcookie("juego3", true, time() + (86400 * 30), "/"); // 86400 = 1 day
+        $juegosJugados[4] = true;
+    }
 
-
+    if ($juegosJugados[4] == true) {
+        setcookie("juego4", true, time() + (86400 * 30), "/"); // 86400 = 1 day
+    }
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -67,7 +75,6 @@ if ($juegosJugados[2] == true) {
 ¡Recoge todos los diplomas y llega hasta la cima!</li>
             </div><br>
             <p>¡Completa cada juego para poder jugar al siguiente y descubre las sorpresas que aguardan!</p>
-
 
             <section class="grid-juegos-games">
                 <div class="juego1Giff" onclick="window.location.href='../JUEGO1/index.php'">

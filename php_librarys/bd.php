@@ -120,22 +120,28 @@
         $longitudArray = (count($resultado));
 
         while ($i < $longitudArray) {
+            
+            if ($resultado[$i]['IdUsuario'] == $sesionIniciada && $resultado[$i]['IdJuego'] == 1 && $resultado[$i]['Puntuacion'] != null ) {
+                $juegosJugados[1]= true;
+                // $i = $longitudArray + 1;
+            } else {
+            }
 
             if ($resultado[$i]['IdUsuario'] == $sesionIniciada && $resultado[$i]['IdJuego'] == 2 && $resultado[$i]['Puntuacion'] != null ) {
-                $juegosJugados[0]= true;
-                $i = $longitudArray + 1;
+                $juegosJugados[2]= true;
+                // $i = $longitudArray + 1;
             } else {
             }
 
             if ($resultado[$i]['IdUsuario'] == $sesionIniciada && $resultado[$i]['IdJuego'] == 3 && $resultado[$i]['Puntuacion'] != null ) {
-                $juegosJugados[1]= true;
-                $i = $longitudArray + 1;
+                $juegosJugados[3]= true;
+                // $i = $longitudArray + 1;
             } else {
             }
 
             if ($resultado[$i]['IdUsuario'] == $sesionIniciada && $resultado[$i]['IdJuego'] == 4 && $resultado[$i]['Puntuacion'] != null ) {
-                $juegosJugados[2]= true;
-                $i = $longitudArray + 1;
+                $juegosJugados[4]= true;
+                // $i = $longitudArray + 1;
             } else {
             }
 
@@ -146,3 +152,7 @@
 
         return $juegosJugados;
     }
+
+    
+
+?>
