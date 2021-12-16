@@ -4,7 +4,7 @@ function openBD()
 {
     $servername = "localhost";
     $username = "root";
-    $password = "MongoloDB+";
+    $password = "mysql";
 
 
     $conn = new PDO("mysql:host=$servername;dbname=juego", $username, $password);
