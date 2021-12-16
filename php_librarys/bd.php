@@ -5,7 +5,7 @@
         $servername = "localhost:3306";
         $username = "root";
         $password = "mysql";
-           
+        
         $conexion = new PDO("mysql:host=$servername;dbname=Juego", $username, $password); 
         // set the PDO error mode to exception
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -30,7 +30,7 @@
 
         $conexion = cerrarBd();
     }
-   
+
     function insertarUsuario($email, $nombre, $apellidos, $password){
         $conexion = abrirBd();
         $paswordEncriptado=password_hash($password,PASSWORD_DEFAULT);
@@ -146,6 +146,3 @@
 
         return $juegosJugados;
     }
-    
-
-?>
