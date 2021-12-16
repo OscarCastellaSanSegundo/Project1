@@ -127,7 +127,7 @@ function readCookie(name) {
   
     return null;
   
-  }
+}
 
 function programa3() { //Activa el cronometro de forma que solo se active una vez
     if (programaCronometro == true) {

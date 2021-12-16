@@ -91,6 +91,61 @@
         return $sesionIniciada;
     }
 
+    function obtenerSession(){
+        $conexion = abrirBd();
+        $sentenciaTexto = "select UsuarioActual from session_iniciada";
+
+        $sentencia = $conexion->prepare($sentenciaTexto);
+        $sentencia->execute();
+
+        $resultado = $sentencia->fetchAll();
+
+        $resultado2 = $resultado[0]['UsuarioActual'];
+
+        $conexion = cerrarBd();
+
+
+        return $resultado2;
+    }
+
+    function comprobarPuntuacionJuegos($juegosJugados, $sesionIniciada){
+
+        $i = 0;
+        $conexion = abrirBd();
+        $sentenciaTexto = "select IdUsuario, IdJuego, Puntuacion from usuario_juego_curso";
+        $sentencia = $conexion->prepare($sentenciaTexto);
+        
+        $sentencia->execute();
+        $resultado = $sentencia->fetchAll();      
+        $longitudArray = (count($resultado));
+
+        while ($i < $longitudArray) {
+
+            if ($resultado[$i]['IdUsuario'] == $sesionIniciada && $resultado[$i]['IdJuego'] == 2 && $resultado[$i]['Puntuacion'] != null ) {
+                $juegosJugados[0]= true;
+                $i = $longitudArray + 1;
+            } else {
+            }
+
+            if ($resultado[$i]['IdUsuario'] == $sesionIniciada && $resultado[$i]['IdJuego'] == 3 && $resultado[$i]['Puntuacion'] != null ) {
+                $juegosJugados[1]= true;
+                $i = $longitudArray + 1;
+            } else {
+            }
+
+            if ($resultado[$i]['IdUsuario'] == $sesionIniciada && $resultado[$i]['IdJuego'] == 4 && $resultado[$i]['Puntuacion'] != null ) {
+                $juegosJugados[2]= true;
+                $i = $longitudArray + 1;
+            } else {
+            }
+
+            $i++;
+            
+        }
+        $conexion = cerrarBd();
+
+        return $juegosJugados;
+    }
     
 
 ?>

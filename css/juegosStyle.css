@@ -1,0 +1,75 @@
+.juego1Giff {
+    background-size: cover;
+    background-image: url(../img/JUEGO1.gif);
+    width: 720px;
+    height: 405px;
+    
+}
+
+.juego2Giff {
+    background-size: cover;
+    background-image: url(../img/JUEGO2.gif);
+    filter: grayscale(1) contrast(0.4) brightness(1.4);
+    /* opacity: 50%; */
+    width: 720px;
+    height: 405px;
+}
+
+.juego3Giff {
+    background-size: cover;
+    background-image: url(../img/JUEGO3.gif); 
+    filter: grayscale(1) contrast(0.4) brightness(1.4);
+    width: 720px;
+    /* opacity: 50%; */
+    height: 405px;
+}
+
+.juego4Giff {
+    background-size: cover;
+    background-image: url(../img/JUEGO4.gif);
+    background-color: rgb(19, 17, 14);
+    filter: grayscale(1) contrast(0.4) brightness(1.4);
+    /* opacity: 50%; */
+    width: 720px;
+    height: 405px;
+    
+}
+
+.contenedorJuegos {
+    margin-top: 50px !important;
+    justify-content: center;
+    /* height: 810px;
+    width: 100%; */
+ 
+    
+}
+
+@font-face {
+    font-family: "textoJuegos";
+    src: url(../fuentes/Gameplay.ttf);
+}
+
+.juegoTexto{
+    margin-top: 25px;
+    font-family: "textoJuegos";
+    font-size: 37px;
+    opacity: 100%;
+    text-align: center;
+    text-shadow: -2px -2px 2px rgb(255, 255, 255), 2px 2px 2px rgb(255, 255, 255), -2px 2px 2px rgb(255, 255, 255), 2px -2px 2px rgb(255, 255, 255);
+}
+
+body{
+    background-image: url(../img/cep033.jpg);
+    background-size: cover;
+}
+
+.botonJuego{
+    width: 15%;
+}
+
+.contenedorBoton{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
