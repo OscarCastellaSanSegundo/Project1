@@ -152,10 +152,7 @@
 
         return $juegosJugados;
     }
-<<<<<<< HEAD
 
     
 
 ?>
-=======
->>>>>>> b057bcdacea6f263c50381383530d5f76ed12cc6
