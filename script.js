@@ -89,6 +89,6 @@ equipo.addEventListener('click', () => {
 //BOTÓN CONTACTO - REDES
 let toggle = document.querySelector('.toggle');
 let menuContacto = document.querySelector('.contacto');
-toggle.onclick= function(){
-    menuContacto.classList.toggle('active')
-}
+// toggle.onclick= function(){
+//     menuContacto.classList.toggle('active')
+// }

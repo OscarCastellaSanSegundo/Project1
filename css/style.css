@@ -825,7 +825,21 @@ margin-left: 50px;
         border: 5px solid #1572db;
         filter: brightness(1);
     }
+    
+    .juego2Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
 
+    .juego3Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
+
+    .juego4Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
     .juego2Giff {
         background-size: cover;
         background-image: url(../img/JUEGO2.gif);
@@ -1021,9 +1035,9 @@ margin-left: 50px;
         margin-top: 20px;
     }
 
-    .grid-juegos .content a:hover {
+    /* .grid-juegos .content a:hover {
         background: #0b3b50;
-    }
+    } */
     
     .juego1Giff {
         background-size: cover;
@@ -1035,6 +1049,21 @@ margin-left: 50px;
     }
 
     .juego1Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
+
+    .juego2Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
+
+    .juego3Giff:hover {
+        border: 5px solid #1572db;
+        filter: brightness(1);
+    }
+
+    .juego4Giff:hover {
         border: 5px solid #1572db;
         filter: brightness(1);
     }

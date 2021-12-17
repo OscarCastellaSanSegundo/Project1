@@ -20,10 +20,12 @@
 
                 $sesionCorrecta = logInUser($_GET['inputEmail'], $_GET['inputPassword']);
                 
-                if ($sesionCorrecta == true) {
+                if ($sesionCorrecta == 1) {
+                    header("Location: ../paginasHtml/login.php");
+                }else if ($sesionCorrecta == 2) {
                     header("Location: ../paginasHtml/juegos.php");
                 }else{
-                    header("Location: ../paginasHtml/login.php");
+                    header("Location: ../ADMIN/index.php");
                 }
             }
 

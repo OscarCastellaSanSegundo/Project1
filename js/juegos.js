@@ -5,7 +5,6 @@ let cookieJuego2 = readCookie( "juego2" );
 let cookieJuego3 = readCookie( "juego3" );
 let cookieJuego4 = readCookie( "juego4" ); 
 
-console.log(cookieJuego4);
 
 juego2 = document.getElementsByClassName("juego2Giff");
 juego3 = document.getElementsByClassName("juego3Giff");

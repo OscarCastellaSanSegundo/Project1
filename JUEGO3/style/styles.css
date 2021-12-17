@@ -1,0 +1,132 @@
+body{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url(../img/cep.jpg);
+}
+#fondoJuego{
+    overflow: hidden;
+ background-image: url(../img/suelo5.jpg);
+ 
+    width: 960px;
+    height: 500px;
+
+    position: relative;
+    /* top: 75px; */
+    left: 300px;
+    top: 150px; 
+}
+.jugador{ 
+    background-size: cover;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 430px;
+    left: 320px;
+    background-image: url(../img/alumno.png);
+}
+.obstaculos{
+    width: 50px;
+    height: 50px;
+    background-size: 100% 100%; 
+    position: absolute;
+}
+#paso1{
+   
+     background-image: url(../img/2Personaje2.gif);  
+}
+#paso2{
+    background-image: url(../img/2Personaje3.gif); 
+}
+#paso3{
+    background-image: url(../img/2Personaje4.gif);
+}
+.alumnos{
+    width: 50px;
+    height: 50px;
+    background-size: 100% 100%; 
+    position: absolute;
+    background-image: url(../img/practicas.png);
+}
+#salon{
+    width: 250px;
+    height: 150px;
+    background-size: 100% 100%;
+    background-image: url(../img/edificio.png);
+
+}
+.contador{
+    width: 200px;
+    height: 200px;
+
+    position: absolute;
+    top: 150px;
+    left: 50px;
+     right: 15px;
+    z-index: 10;
+    background-color: black;
+    color :white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+.score{
+    left: 840px;
+   
+    width: 120px;
+    height: 60px;
+    top: 0px;
+    position: absolute;
+    color: white;   
+    border-color: black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+} 
+#eliminados{
+    left: 840;
+    top:50px;
+}
+#salvados{
+    left: 840px;
+    top: 25px;
+}
+#perdidos{
+    left:840px;
+    top: 0px;
+}
+
+/* #footer{
+
+    height: 150px;
+} */
+
+#empezar{
+    
+    left: 370px;
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    font-size: 50px;
+    top: 210px;
+    color: black;
+    background-position: center;
+    background-color:wheat;
+}
+
+#siguiente{
+    background-image: url("../img/reinicio.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    border-color: goldenrod !important;
+    position: absolute;
+    left: 100px;
+    height: 80px;
+    width: 80px;
+    top: 500px;
+    border-radius: 30px 30px;
+}
+/* <----------------------------------------
+ranking> */

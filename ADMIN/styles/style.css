@@ -1,0 +1,46 @@
+body{
+    box-sizing: border-box;
+    background:url(../img/fondo.png)no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container-principal{
+ width: 90%;
+  margin-top: 30px;
+  padding: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+.btn-propio{
+   margin-left: 3px;
+   margin-right: 3px;
+}
+
+.td-edicion{
+    width: 185px;
+}
+
+.anyadir-usuario{
+    text-align: center;
+}
+
+.btn-anyadir{
+    width: 160px;
+    
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 5 / 5; }
+    .div2 { grid-area: 1 / 5 / 2 / 6; }
+    .div3 { grid-area: 2 / 5 / 3 / 6; }
+    .div4 { grid-area: 3 / 5 / 4 / 6; }
+

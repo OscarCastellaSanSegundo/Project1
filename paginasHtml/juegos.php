@@ -7,25 +7,29 @@
     setcookie("juego2", false, time() + (86400 * 30), "/"); // 86400 = 1 day
     setcookie("juego3", false, time() + (86400 * 30), "/"); // 86400 = 1 day
     setcookie("juego4", false, time() + (86400 * 30), "/"); // 86400 = 1 day
+    // insertarPuntuacionJuegos();
     $juegosJugados = comprobarPuntuacionJuegos($juegosJugados, $sesionIniciada);
 
-    if ($juegosJugados[1] == true) {
-        setcookie("juego1", true, time() + (86400 * 30), "/"); // 86400 = 1 day
-        $juegosJugados[2] = true;
-    }
-
-    if ($juegosJugados[2] == true) {
-        setcookie("juego2", true, time() + (86400 * 30), "/"); // 86400 = 1 day
-        $juegosJugados[3] = true;
+    if ($juegosJugados[4] == true) {
+        setcookie("juego4", true, time() + (86400 * 30), "/"); // 86400 = 1 day
     }
 
     if ($juegosJugados[3] == true) {
+        setcookie("juego4", true, time() + (86400 * 30), "/"); // 86400 = 1 day
         setcookie("juego3", true, time() + (86400 * 30), "/"); // 86400 = 1 day
         $juegosJugados[4] = true;
     }
 
-    if ($juegosJugados[4] == true) {
-        setcookie("juego4", true, time() + (86400 * 30), "/"); // 86400 = 1 day
+    if ($juegosJugados[2] == true) {
+        setcookie("juego3", true, time() + (86400 * 30), "/"); // 86400 = 1 day
+        setcookie("juego2", true, time() + (86400 * 30), "/"); // 86400 = 1 day
+        $juegosJugados[3] = true;
+    }
+
+    if ($juegosJugados[1] == true) {
+        setcookie("juego2", true, time() + (86400 * 30), "/"); // 86400 = 1 day
+        setcookie("juego1", true, time() + (86400 * 30), "/"); // 86400 = 1 day
+        $juegosJugados[2] = true;
     }
 ?>
 
@@ -80,13 +84,13 @@
                 <div class="juego1Giff" onclick="window.location.href='../JUEGO1/index.php'">
                     <p class="juegoTexto">JUEGO 1</p>
                 </div>
-                <div class="juego2Giff">
+                <div class="juego2Giff" onclick="comprobarSiPuedeJugarJuego2()">
                     <p class="juegoTexto">JUEGO 2</p>
                 </div>
-                <div class="juego3Giff">
-                    <p class="juegoTexto">JUEGO 3</p>
+                <div class="juego3Giff" onclick="comprobarSiPuedeJugarJuego3()">
+                    <p class="juegoTexto" >JUEGO 3</p>
                 </div>
-                <div class="juego4Giff" onclick="window.location.href='../JUEGO4/inicio.php'">
+                <div class="juego4Giff" onclick="comprobarSiPuedeJugarJuego4()">
                     <p class="juegoTexto">JUEGO 4</p>
                 </div>
             </section>

@@ -71,11 +71,11 @@
             
 
             while ($i <= $longitudArray) {
-                if ($resultado[$i]['IdUsuario'] == $sessionActual && $resultado[$i]['Puntuacion'] > $_COOKIE['puntuacionFinal']) {
+                if ($resultado[$i]['IdUsuario'] == $sessionActual && $resultado[$i]['IdJuego'] = 4 && $resultado[$i]['Puntuacion'] > $_COOKIE['puntuacionFinal']) {
                     $cambiarPuntuacion = 2;
                     $i = $longitudArray + 1;
                     
-                } else if ($resultado[$i]['IdUsuario'] == $sessionActual && $resultado[$i]['Puntuacion'] <= $_COOKIE['puntuacionFinal']) {
+                } else if ($resultado[$i]['IdUsuario'] == $sessionActual && $resultado[$i]['IdJuego'] = 4 && $resultado[$i]['Puntuacion'] <= $_COOKIE['puntuacionFinal']) {
                     $cambiarPuntuacion = 1;
                     $i = $longitudArray + 1;
                            
@@ -113,7 +113,7 @@
 
                 $conexion = abrirBd();
 
-                $sentenciaTexto = "update usuario_juego_curso set Puntuacion = :puntuacion where IdUsuario = :id_usuario";
+                $sentenciaTexto = "update usuario_juego_curso set Puntuacion = :puntuacion where IdUsuario = :id_usuario and IdJuego = 4";
                 $sentencia = $conexion->prepare($sentenciaTexto);
 
 

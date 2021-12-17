@@ -39,7 +39,7 @@ body h1{
 .juego4Giff {
     background-size: cover;
     background-image: url(../img/JUEGO4.gif);
-    background-color: rgb(19, 17, 14);
+    /* background-color: rgb(19, 17, 14); */
     filter: grayscale(1) contrast(0.4) brightness(1.4);
     /* opacity: 50%; */
     width: 720px;
