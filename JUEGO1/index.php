@@ -20,7 +20,7 @@
             <img src="./img/banner.png" alt="logo" id="banner">
         </p>
         <a href="./pages/play.html"><button id="play-btn">PLAY</button><br></a>
-        <a href= "./pages/ranking.php"><button id="ranking-btn">RANKING</button><br></a>
+        <a href= "./pages/list.php"><button id="ranking-btn">RANKING</button><br></a>
         <a href="./pages/credits.html"><button id="credits-btn">CREDITS</button><br></a>
         <a href="../paginasHtml/juegos.php">
                 <button id="ranking-btn"><i class="fas fa-arrow-left"></i></button><br>

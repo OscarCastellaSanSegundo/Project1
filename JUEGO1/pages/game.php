@@ -1,7 +1,5 @@
-<?php require_once('./php_librarys/bd.php');
-$nuevaPuntuacion=$_COOKIE["score"];
+<?php require_once('../php_librarys/bd.php');
 
-insertarPuntuacion($nuevaPuntuacion);
 ?>
 
 

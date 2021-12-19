@@ -65,7 +65,7 @@ let vida2
 let vida3
 let vidas = 3 //Contador de Vidas
 
-// ---- DISTANCIA
+// ---- DISTANCIA 2000000
 let distancia = 0; // Distancia recorrida
 const limite = 2000000; //Límite que hay que superar para ganar
 let ganar = false; //Boolean que activa el final del juego
@@ -237,7 +237,7 @@ function resultado() {
         "<p>🦘&nbsp;" + score + "</p>" +
         "<p>🎯&nbspTOTAL &nbsp;<span style='color: gold;'>" + puntos + "</span></p>"
 
-        document.cookie="score="+resultado;
+        document.cookie="puntuacion="+puntos;
 }
 
 function calcularPuntos() {
@@ -298,7 +298,7 @@ function eventoFinal() {
     fiesta()
     setTimeout(function () {
         audioWin.pause()
-        window.location.href = "../index.php";
+        window.location.href = "../pages/ranking.php";
     }, 2370);
 }
 

@@ -1,9 +1,7 @@
 <?php
 
 require_once('../php_librarys/bd.php');
-$nuevaPuntuacion=$_COOKIE["puntuacion"];
 
-insertarPuntuacion($nuevaPuntuacion);
 $ranking = selectRanking();
 $i = 1;
 ?>

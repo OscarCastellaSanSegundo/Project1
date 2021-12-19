@@ -330,7 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
         audioRescatado.play();
       }
 
-      if (modulosRecuperados === 1) {
+      if (modulosRecuperados === 4) {
 
         puntuacion-=second;//contra mas segundos ha gastado mas puntos le quito
         console.log("GANAS tu puntuacion es: "+puntuacion)
