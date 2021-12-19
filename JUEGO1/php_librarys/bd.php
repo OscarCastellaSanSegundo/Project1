@@ -42,7 +42,7 @@ function selectCursos()
 function selectRanking()
 {
     $conexion = openBd();
-    $sentenciaText = "select * from usuario_juego_curso INNER JOIN usuario ON usuario.Id = usuario_juego_curso.IdUsuario where idJuego=1 ORDER BY Puntuacion DESC LIMIT 5;";
+    $sentenciaText = "select * from usuario_juego_curso INNER JOIN usuario ON usuario.Id = usuario_juego_curso.IdUsuario  where idJuego=1 GROUP BY nombre ORDER BY Puntuacion DESC LIMIT 5;";
     $sentencia = $conexion->prepare($sentenciaText);
     $sentencia->execute();
     $resultado = $sentencia->fetchAll();
