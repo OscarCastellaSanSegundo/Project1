@@ -1,4 +1,3 @@
-
 //MENU RESPONSIVE
 const menuBtn = document.querySelector(".menu-btn");
 const navigation = document.querySelector(".navigation");
@@ -89,6 +88,6 @@ equipo.addEventListener('click', () => {
 //BOTÓN CONTACTO - REDES
 let toggle = document.querySelector('.toggle');
 let menuContacto = document.querySelector('.contacto');
-// toggle.onclick= function(){
-//     menuContacto.classList.toggle('active')
-// }
+toggle.onclick = function () {
+    menuContacto.classList.toggle('active')
+}

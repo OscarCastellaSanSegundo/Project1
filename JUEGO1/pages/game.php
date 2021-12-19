@@ -1,8 +1,3 @@
-<?php require_once('../php_librarys/bd.php');
-
-?>
-
-
 
 <!DOCTYPE html>
 <html lang="es">
