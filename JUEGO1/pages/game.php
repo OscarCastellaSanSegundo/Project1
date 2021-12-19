@@ -1,3 +1,11 @@
+<?php require_once('./php_librarys/bd.php');
+$nuevaPuntuacion=$_COOKIE["score"];
+
+insertarPuntuacion($nuevaPuntuacion);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 

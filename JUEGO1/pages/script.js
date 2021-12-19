@@ -236,6 +236,8 @@ function resultado() {
         "<p>❤️&nbsp;&nbsp;" + vidas + " x 1000</p>" +
         "<p>🦘&nbsp;" + score + "</p>" +
         "<p>🎯&nbspTOTAL &nbsp;<span style='color: gold;'>" + puntos + "</span></p>"
+
+        document.cookie="score="+resultado;
 }
 
 function calcularPuntos() {

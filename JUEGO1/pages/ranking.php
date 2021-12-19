@@ -1,7 +1,8 @@
 <?php
 
 require_once('../php_librarys/bd.php');
-$juegos = selectJuegos();
+$ranking = selectRanking();
+$i = 1;
 ?>
 
 <!DOCTYPE html>
@@ -23,36 +24,35 @@ $juegos = selectJuegos();
     <div class="menuPrincipal">
         <div class="titulo"> - RANKING -</div>
         <div class="ranking">
-            <table>
-                <tr>
-                    <th>
-                        Nombre
-                    </th>
-                    <th>
-                        Apellido
-                    </th>
-                    <th>
-                        Puntuación
-                    </th>
-                </tr>
-                <?php foreach($juegos as $juego) { ?>
+            <table class="table table-dark table-striped">
+                <thead class="thead-dark">
                     <tr>
-                        <td>
-                            <?php echo $juego['nombre']; ?>
-                        </td>
-                        <td>
-                            <?php echo $juego['apellido']; ?>
-                        </td>
-                        <td>
-                            <?php echo $juego['puntuacion']; ?>
-                        </td>
+                        <th scope="col"></th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Puntuacion</th>
                     </tr>
-                <?php   }  ?>
+                </thead>
+                <tbody>
+                    <tr>
+                        <?php
+                        foreach ($ranking as  $player) {
+                            echo "<tr>";
+                            echo "<th scope=\"row\">$i</th>";
+                            echo "<td>" . $player['Nombre'] . "</td>";
+                            echo "<td>" . $player['Apellido'] . "</td>";
+                            echo "<td>" . $player['Puntuacion'] . "</td>";
+                            echo "</tr>";
+                            $i++;
+                        }
+                        ?>
+                    </tr>
+                </tbody>
             </table>
         </div><br>
         <a href="../index.php">
-                <button id="ranking-btn"><i class="fas fa-arrow-left"></i></button><br>
-            </a>
+            <button id="ranking-btn"><i class="fas fa-arrow-left"></i></button><br>
+        </a>
         <footer>© Frank Santos - 2021</footer>
     </div>
 </body>
