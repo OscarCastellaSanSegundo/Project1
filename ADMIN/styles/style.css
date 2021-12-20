@@ -2,15 +2,20 @@ body{
     box-sizing: border-box;
     background:url(../img/fondo.png)no-repeat center center fixed;
     background-size: cover;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Saira Condensed', sans-serif;
 }
 
 .container-principal{
  width: 90%;
-  margin-top: 30px;
+  margin-top: 60px;
   padding: 10px;
   border: 1px solid rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+ 
+ 
+
 
 }
 .btn-propio{
@@ -19,7 +24,10 @@ body{
 }
 
 .td-edicion{
-    width: 185px;
+    width: 210px;
+}
+.btn-edit-borrar{
+    margin: 0px;
 }
 
 .anyadir-usuario{
@@ -29,6 +37,9 @@ body{
 .btn-anyadir{
     width: 160px;
     
+}
+.idUsuario{
+    width: 80px;
 }
 
 .parent {
@@ -44,3 +55,77 @@ body{
     .div3 { grid-area: 2 / 5 / 3 / 6; }
     .div4 { grid-area: 3 / 5 / 4 / 6; }
 
+
+.container-form{
+    width: 25%;
+    margin-top: 60px;
+    padding: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+}
+.titulo{
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.botonesEditar{
+    text-align: end;
+}
+
+.msg{
+    text-align: center;
+    height: 40px;
+    background-color: crimson;
+    width: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: fixed;
+    animation-duration: 1.5s;
+    animation-name: error;
+    z-index: -1;
+   border-radius: 0px 0px 200px 200px;
+}
+@keyframes error {
+    0%{
+        top:-60px;
+    }
+    100%{
+        top:58px;
+    }
+   }
+.msgCorrecto{
+    text-align: center;
+    height: 40px;
+    background-color: rgb(146, 220, 131);
+    width: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: fixed;
+    animation-duration: 8s;
+    animation-name: correcto;
+    z-index: -1;
+   border-radius: 0px 0px 200px 200px;
+   opacity: 0%;
+}
+@keyframes correcto {
+    0%{opacity:100%;
+        top:-60px;
+    }
+    10%{opacity: 100%;
+        top:58px;
+    }
+    100%{
+        opacity: 0%;
+    }
+   }
+
+.letras{
+    font-size: 24;
+    color:rgb(255, 193, 7);
+   
+}
+.letrassub{  
+    color:rgb(255, 193, 7)
+}

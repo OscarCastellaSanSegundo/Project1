@@ -119,6 +119,113 @@ function insertPuntuacion($puntuacion){
     return $resultado;
 }
 
+function selectUsuarioEdit($id){
+    $conexion=openBd();
+    $sentenciaText="select * from usuario WHERE id = ".$id;
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->execute();
+    $resultado=$sentencia->fetchAll();
+    $conexion=closeBd();
+
+    return $resultado;
+
+}
+
+function updateUsuario($id,$nombre,$apellido,$email,$password){
+
+    $paswordEncriptado=password_hash($password,PASSWORD_DEFAULT);
+
+    $conexion=openBd();
+    $sentenciaText="UPDATE usuario SET Nombre='".$nombre."' , Apellido='".$apellido."', Email='".$email."', Password='".$paswordEncriptado."' WHERE Id=".$id;
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->execute();
+    $resultado=$sentencia->fetchAll();
+    $conexion=closeBd();
+
+    return $resultado;
+
+}
+
+function insertUsuario($nombre,$apellido,$email,$password){
+
+    $paswordEncriptado=password_hash($password,PASSWORD_DEFAULT);
+
+    $conexion=openBd();
+    $sentenciaText="INSERT INTO usuario values(null,'".$email."','".$nombre."','".$apellido."','".$paswordEncriptado."',1,1)";
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->execute();
+    $resultado=$sentencia->fetchAll();
+    $conexion=closeBd();
+
+    return $resultado;
+
+}
+
+function deleteID($id){
+
+    $conexion=openBd();
+    $sentenciaText="DELETE FROM usuario WHERE id = ".$id;
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->execute();
+    $resultado=$sentencia->fetchAll();
+    $conexion=closeBd();
+
+    return $resultado;
+
+}
+/* 
+function deleteIDCurso($id){
+
+    $conexion=openBd();
+    $sentenciaText="DELETE FROM curso WHERE id = ".$id;
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->execute();
+    $resultado=$sentencia->fetchAll();
+    $conexion=closeBd();
+
+    return $resultado;
+
+}
+
+function insertCurso($id,$nombre){
+
+
+    $conexion=openBd();
+    $sentenciaText="INSERT INTO curso values(".$id." , ".$nombre.")";
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->execute();
+    $resultado=$sentencia->fetchAll();
+    $conexion=closeBd();
+
+    return $resultado;
+
+}
+
+function selectCursoEditar($id){
+    $conexion=openBd();
+    $sentenciaText="select * from curso WHERE id = ".$id;
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->execute();
+    $resultado=$sentencia->fetchAll();
+    $conexion=closeBd();
+
+    return $resultado;
+
+}
+
+function updateCurso($id,$nombre){
+
+
+    $conexion=openBd();
+    $sentenciaText="UPDATE curso SET Nombre='".$nombre."'WHERE Id=".$id;
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->execute();
+    $resultado=$sentencia->fetchAll();
+    $conexion=closeBd();
+
+    return $resultado;
+
+} */
 
 
 
