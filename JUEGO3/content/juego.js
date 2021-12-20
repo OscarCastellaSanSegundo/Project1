@@ -14,7 +14,7 @@ window.onload = function () {
     salvados = 0;
     perdidos = 0;
 
-    let contador = 10;
+    let contador = 20;
 
     const botonIniciar = document.getElementById("empezar");
     const salirjuego = document.getElementById("salirjuego");
@@ -422,7 +422,7 @@ window.onload = function () {
 
             juego = false;
             document.cookie = "puntuacion=" + puntuacion;
-            window.location.href = "../content/ranking.php";
+            window.location.href = "../JUEGO3/ranking.php";
             salirjuego.style.visibility = "visible";
         }
 

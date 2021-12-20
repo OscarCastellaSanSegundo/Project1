@@ -49,7 +49,7 @@ $i = 1;
                 </tbody>
             </table>
         </div><br>
-        <a href="../index.php">
+        <a href="../paginasHtml/juegos.php">
             <button id="ranking-btn"><i class="fas fa-arrow-left"></i></button><br>
         </a>
 
@@ -57,5 +57,5 @@ $i = 1;
 <div id="salirJuego" onclick="window.location.href='../paginasHtml/juegos.php'"></div> 
 
 </body>
-<script src="/content/juego.js"></script>
+<script src="../JUEGO3/content/juego.js"></script>
 </html>
