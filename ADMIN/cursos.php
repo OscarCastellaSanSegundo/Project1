@@ -1,5 +1,7 @@
 <?php require_once('./php_librarys/bd.php');
 $cursos = selectCursos();
+$metodo = isset($_POST['metodo']) ? $_POST['metodo'] : '';
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,7 +16,11 @@ $cursos = selectCursos();
 <link rel="stylesheet" href="styles/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"> 
 
-    <title>Hello, world!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&family=Saira+Condensed&display=swap" rel="stylesheet">
+
+    <title>Administracion de cursos</title>
   </head>
   <body>
   <header>
@@ -28,7 +34,7 @@ $cursos = selectCursos();
             <tr>
                 <th class="bg-warning text-dark">ID</th>
                 <th class="bg-warning text-dark">Nombre</th>
-                <th class="bg-warning text-dark">Edicion</th>
+              <!--   <th class="bg-warning text-dark">Edicion</th> -->
                
             </tr>
         </thead>
@@ -36,9 +42,13 @@ $cursos = selectCursos();
            <?php
               foreach ($cursos as  $curso) {
                 echo "<tr>";
-                echo "<th scope=\"row\">" . $curso['Id'] . "</th>";
+                echo "<th class=\"idUsuario\" scope=\"row\">" . $curso['Id'] . "</th>";
                 echo "<td>" . $curso['Nombre'] . "</td>";
-                echo "<td class=\"td-edicion\"><a class=\"btn btn-primary btn-propio\"  href=\"https://www.w3schools.com/\"><i class=\"fas fa-edit\"></i> Editar</a><a class=\"btn btn-danger\"  href=\"https://www.w3schools.com/\"><i class=\"fas fa-trash\"></i> Borrar</a></td>";
+               /*  echo "<form action=\"phpControllers/bdController.php\" method=\"POST\">";
+                echo "<td class=\"td-edicion\"> <button type=\"submit\" class=\"btn btn-outline-primary \" title=\"Editar\" value=\"editarCurso\" name=\"metodo\"> EDITAR <i class=\"fas fa-edit\"></i></button> <button type=\"submit\" class=\"btn btn-outline-danger \" title=\"Borrar\" value=\"borrarCurso\" name=\"metodo\"> BORRAR <i class=\"fas fa-trash\"></i></button>";
+                echo "<input type=\"hidden\" name=\"numeroEditarBorrarCurso\" value=\"" . $curso['Id'] . "\"/>";
+             
+                echo "</form>"; */
                 echo "</tr>";
               }
               ?>
@@ -48,7 +58,7 @@ $cursos = selectCursos();
             <tr>
                 <th class="bg-warning text-dark">Id</th>
                 <th class="bg-warning text-dark">Nombre</th>
-                <th class="anyadir-usuario bg-warning text-dark"> <a href="pokemonform.php" class=" btn btn-success btn-anyadir" title="Añadir Pokémon"><i class="fas fa-add"></i>  Añadir Curso</a></th>
+               <!--  <th class="anyadir-usuario bg-warning text-dark"> <a href="pokemonform.php" class=" btn btn-success btn-anyadir" title="Añadir Curso"><i class="fas fa-add"></i>  Añadir Curso</a></th> -->
                 
             </tr>
         </tfoot>

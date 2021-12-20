@@ -1848,7 +1848,6 @@ function partidaGanada() {
                 escribirBonus = 100;
                 puntuacionObtenida = puntuacionObtenida - contadorMovimientos + escribirBonus + tiempoRestante;
             }
-            
             document.cookie = "puntuacionFinal=" + puntuacionObtenida;
             escribirPuntos = document.getElementById('mostrarPuntuacion').innerHTML = "+ " + escribirPuntos;
             tiempoRestante = document.getElementById('mostrarTiempoRestante').innerHTML = "+ " + tiempoRestante;

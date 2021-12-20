@@ -108,6 +108,7 @@
                 $sentencia->execute();
                     
                 $conexion = cerrarBd();
+                
 
             } else if ($cambiarPuntuacion == 1) {
 
@@ -128,6 +129,8 @@
             }else{
                 
             }
+
+            borrarPuntuacion();
             
         }
         
@@ -136,5 +139,9 @@
     function posicion(){
         $_SESSION['posicion']++;
         echo $_SESSION['posicion'];
+    }
+
+    function borrarPuntuacion(){
+        $_COOKIE['puntuacionFinal'] = 0;
     }
 ?>

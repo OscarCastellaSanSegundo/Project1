@@ -1,5 +1,11 @@
 <?php require_once('./php_librarys/bd.php');
 $juego2 = selectRanking2();
+
+if (!isset($_SESSION["error"])) {
+  $error = false;
+} else {
+ $_SESSION["anyadido"]=false;
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,7 +20,11 @@ $juego2 = selectRanking2();
 <link rel="stylesheet" href="styles/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"> 
 
-    <title>Ranking juego 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&family=Saira+Condensed&display=swap" rel="stylesheet">
+
+    <title>Ranking juego 2</title>
   </head>
   <body>
   <header>
@@ -28,7 +38,7 @@ $juego2 = selectRanking2();
       <table id="example" class="display table table-striped " style="width:100%">
         <thead >
             <tr>
-                <th class="bg-warning text-dark">ID Jugador</th>
+                <th class="bg-warning text-dark idUsuario">ID Jugador</th>
                 <th class="bg-warning text-dark">Email</th>
                 <th class="bg-warning text-dark">Puntuacion</th>
                
@@ -38,7 +48,7 @@ $juego2 = selectRanking2();
            <?php
               foreach ($juego2 as  $usuario) {
                 echo "<tr>";
-                echo "<th scope=\"row\">" . $usuario['IdUsuario'] . "</th>";
+                echo "<th class=\"idUsuario\" scope=\"row\">" . $usuario['IdUsuario'] . "</th>";
                 echo "<td>" . $usuario['Email'] . "</td>";
                 echo "<td>".$usuario['Puntuacion']."</td>";
                 echo "</tr>";
