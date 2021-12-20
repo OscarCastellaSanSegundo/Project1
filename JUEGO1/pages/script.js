@@ -67,7 +67,7 @@ let vidas = 3 //Contador de Vidas
 
 // ---- DISTANCIA 2000000
 let distancia = 0; // Distancia recorrida
-const limite = 2000000; //Límite que hay que superar para ganar
+const limite = 3900000; //Límite que hay que superar para ganar
 let ganar = false; //Boolean que activa el final del juego
 let result; //Puntuación Final
 
@@ -82,6 +82,7 @@ let audioBack;
 let audioBocina;
 let audioMetro;
 let audioTheme;
+let dentro = false;
 
 //--------------------------------------------------------------------------------------------
 
@@ -160,12 +161,13 @@ function loop() {
  * 
  * Función que va actualizando todo el rato el juego y lo va moviendo.
  * Todo transcurre aquí.
+ * 
  */
 function update() {
 
     if (perder == true) {
         GameOver();
-    } else if (ganar == true) {
+    } else if (ganar == true && dentro == false) {
         eventoFinal()
     } else {
         moverSuelo();
@@ -179,7 +181,7 @@ function update() {
             moverObstaculos();
             detectarColision();
             //CREANDO LETRAS FRASE
-            if (contadorLetras < 5) {
+            if (contadorLetras < 5) {   
                 decidirCrearLetra();
             }
             detectarColisionLetra();
@@ -287,7 +289,7 @@ function eventoFinal() {
     removeElementsByClass("rotulo")
     removeElementsByClass("suelo")
     removeElementsByClass("letra")
-
+    dentro = true;
     fondo.style.background = "url(../img/fondoCEP.png)"
     fondo.style.bottom = "-180px"
     fondo.style.left = "-78.721px"
