@@ -35,7 +35,7 @@
 
     <!--VIDEOS-->
     <section class="home" id="home">
-        <video class="video-slide active" src="img/juegos.mp4" id="video-home" autoplay muted loop></video>
+        <video class="video-slide active" src="img/videoFinal.mp4" id="video-home" autoplay muted loop></video>
         <video class="video-slide" src="img/videoEntrada.mp4" id="video-centro" autoplay muted loop></video>
         <video class="video-slide" src="img/03.mp4" id="video-metodologia" autoplay muted loop></video>
         <video class="video-slide" src="img/01.mp4" id="video-equipo" autoplay muted loop></video>
