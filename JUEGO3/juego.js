@@ -422,7 +422,9 @@ window.onload = function () {
 
             juego = false;
             document.cookie = "puntuacion=" + puntuacion;
-            window.location.href = "../content/ranking.php";
+            setTimeout(function () {
+                window.location.href = "../JUEGO3/content/ranking.php";
+            }, 2370);
             salirjuego.style.visibility = "visible";
         }
 
@@ -431,7 +433,7 @@ window.onload = function () {
     finaljuego.addEventListener("click", function () {
         juego = false;
         salirjuego.style.visibility = "hidden";
-        window.location.href = "www.google.es";
+        window.location.href = "../paginasHtml/juegos.php";
 
     })
 

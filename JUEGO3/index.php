@@ -1,6 +1,6 @@
 
 <?php
-    session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -9,9 +9,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv=”Cache-Control” content=”no-cache, mustrevalidate”>
+    <title>¡Protege tus prácticas!</title>
     
-    <link rel="stylesheet" href="./style/styles.css">ç
+    <link rel="stylesheet" href="./style/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 </head>
 <body>
@@ -29,12 +30,12 @@
     <div class="score" id= "salvados"></div>
     <div class="score" id= "eliminados"></div>
     <div class="score" id= "perdidos"></div>
-
+    
    
 <button type="button" id="empezar" class="border 1px">Inicio</button>
 
 </div> 
-<button type="button" id="siguiente" class="border 1px"></button>
+<button type="button" id="salirjuego" class="border 1px"></button>
 <div id="contador" class= "contador"></div>
 <script src="./content/juego.js"></script>
 </body>

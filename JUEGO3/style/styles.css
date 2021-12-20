@@ -116,7 +116,7 @@ body{
     background-color:wheat;
 }
 
-#siguiente{
+#salirjuego{
     background-image: url("../img/reinicio.jpg");
     background-size: 100% 100%;
     background-position: center;
@@ -130,3 +130,12 @@ body{
 }
 /* <----------------------------------------
 ranking> */
+.tablaPuntuacion {     
+    font-style: bold;
+    font-size: 12px;        
+    width: 325px; 
+    text-align: left;    
+    border-collapse: collapse;
+    border: 2px solid black;
+     
+}
