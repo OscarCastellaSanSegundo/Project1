@@ -53,33 +53,35 @@
 
         <div class="content" id="content-meto">
             <h1>Metodología<br><span>Politècnics</span></h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos veniam labore consequatur, ab perferendis
-                vero aliquid provident temporibus eius, iste optio. Quia aliquam temporibus obcaecati perferendis,
-                voluptatem necessitatibus accusamus ipsum.</p>
+            <p>El creixement econòmic, la revolució digital, l’automatització i la globalització influeixen directament en la inserció laboral de la població. Per això, des del Projecte Educatiu de Centre apostem per un model d’ensenyament-aprenentatge on la innovació és la gran protagonista. Un model de qualitat, flexible i capaç de respondre a les necessitats canviants de les empreses i de la societat.
+
+Per aquest motiu, al Politècnics participem activament en diferents programes dirigits pel Departament d’Educació de la Generalitat de Catalunya, com són el Programa Activa FP, el Programa Innova FP, el Programa de foment i suport de l’emprenedoria, i el Programa d’Orientació Professional.
+
+El nostre principal propòsit és la formació tècnica i el desenvolupament de les capacitats personals del nostre alumnat. Dirigim els nostres esforços a la seva incorporació al mercat laboral o, fins i tot, a la creació de la seva pròpia empresa amb total garantia d’èxit.
+
+Creem contextos d’aprenentatge basats en metodologies actives que apropen l’alumnat a la realitat empresarial. El nostre Projecte Educatiu de Centre inclou la implementació de les classes invertides, les metodologies AGILE de gestió de projectes, la simulació d’empresa, l’Aprenentatge Basat en Projectes (ABP) i l’Aprenentatge i Servei (ApS).
+
+Al Politècnics valorem especialment el coneixement de llengües estrangeres. Per aquest motiu participem, per una banda, en el Programa Generació Plurilingüe del Departament d’Educació i, per una altra, en el Programa Erasmus+.
+
+La innovació ha deixat de ser un repte futur en l’Educació. Innovar és la nostra realitat. La qüestió, ara, és a quina velocitat ho hem de fer per tal d’adaptar-nos a les necessitats del mercat laboral i de la societat.</p>
             <a href="#">Read More</a>
         </div>
 
         <div class="content" id="content-centro">
             <h1>Nuestro<br><span>Centro</span></h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos veniam labore consequatur, ab perferendis
-                vero aliquid provident temporibus eius, iste optio. Quia aliquam temporibus obcaecati perferendis,
-                voluptatem necessitatibus accusamus ipsum.</p>
+            <p>Al Centre d’Estudis Politècnics disposem d’un equip professional i humà que vetlla en tot moment per satisfer l’experiència acadèmica del nostre alumnat. En tractar-se d’una formació presencial, li proposem que visqui una experiència d’aprenentatge amb els cinc sentits. A l’aula podem veure’ns, escoltar-nos, compartir, discutir i emocionar-nos. L’assistència a classe ens permet aprofitar millor l’experiència d’aprenentatge, d’una manera molt més enriquidora. Ens tenim a totes i tots per explicar, per preguntar, per dubtar, per equivocar-nos i per descobrir.</p>
             <a href="#">Read More</a>
         </div>
 
         <div class="content" id="content-grados">
             <h1>Grados<br><span>Educativos</span></h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos veniam labore consequatur, ab perferendis
-                vero aliquid provident temporibus eius, iste optio. Quia aliquam temporibus obcaecati perferendis,
-                voluptatem necessitatibus accusamus ipsum.</p>
+            <p>Al Centre d’Estudis Politècnics disposem d’un equip professional i humà que vetlla en tot moment per satisfer l’experiència acadèmica del nostre alumnat. En tractar-se d’una formació presencial, li proposem que visqui una experiència d’aprenentatge amb els cinc sentits. A l’aula podem veure’ns, escoltar-nos, compartir, discutir i emocionar-nos. L’assistència a classe ens permet aprofitar millor l’experiència d’aprenentatge, d’una manera molt més enriquidora. Ens tenim a totes i tots per explicar, per preguntar, per dubtar, per equivocar-nos i per descobrir.</p>
             <a href="#">Read More</a>
         </div>
 
         <div class="content" id="content-equipo">
             <h1>Equipo<br><span>Creativo</span></h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos veniam labore consequatur, ab perferendis
-                vero aliquid provident temporibus eius, iste optio. Quia aliquam temporibus obcaecati perferendis,
-                voluptatem necessitatibus accusamus ipsum.</p>
+            <p>Per a la Direcció del centre, la qualitat del nostre equip docent i administratiu sempre ha estat un dels principals elements de valor diferencial. Per això, el Politècnics té un equip professional i humà especialitzat, amb experiència professional en els diversos sectors dels cicles formatius que s’hi imparteixen. És fonamental un equip que conegui i combini les realitats de l’aula i de l’empresa per poder acompanyar el nostre alumnat en el seu procés d’aprenentatge, de creixement personal i d’inserció en el mercat laboral.</p>
             <a href="#">Read More</a>
         </div>
 
@@ -95,16 +97,7 @@
                 <li style="--i:2;">
                     <a href="#"><i class="fas fa-at"></i></a>
                 </li>
-                <li style="--i:3;">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                </li>
-                <li style="--i:4;">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </li>
-                <li style="--i:5;">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </li>
-            </div>
+                <li style="--i:3;"> 
         </div>
     </section>
 
@@ -113,6 +106,7 @@
     <!--SECCIÓN DE CONTENIDO-->
     <section class="grid-frase">
         <div class="content">
+            
             <h2>El Método <br>Politècnics</h2>
             <p>En el <span style="color: #1680AC;">Politècnics</span> abogamos por una educación con
                 <span style="color: #1680AC;">metodologías activas</span> que ayuden al alumno a sacar todo su potencial

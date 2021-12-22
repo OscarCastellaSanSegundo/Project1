@@ -130,7 +130,7 @@
                 
             }
 
-            borrarPuntuacion();
+            // borrarPuntuacion();
             
         }
         
